@@ -91,4 +91,9 @@ do {
                       Get-WUInstall -MicrosoftUpdate -AcceptAll -AutoReboot
                       Write-Host "OS updates initiated. The system may reboot automatically."
                   }
+                }
+              }
+            }
+          }
+        }
                   default
