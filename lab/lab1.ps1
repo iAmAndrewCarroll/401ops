@@ -20,15 +20,19 @@ while ($true) {
 
   switch ($choice) {
       "1" {
-          Display-Menu -SubMenu "Screen Lock"
-          $screenLockChoice = Read-Host "Enter your screen lock choice (a or b):"
+          $subMenu = @"
+1. Check Screen Lock Status
+2. Modify Screen Lock Settings
+"@
+          Display-Menu -SubMenu $subMenu
+          $screenLockChoice = Read-Host "Enter your screen lock choice (1 or 2):"
           switch ($screenLockChoice) {
-              "a" {
+              "1" {
                   # Check screen lock status
                   (Get-ItemProperty -Path Registry::HKEY_CURRENT_USER\Control Panel\Desktop).ScreenSaveTimeOut
                   (Get-ItemProperty -Path Registry::HKEY_CURRENT_USER\Control Panel\Desktop).ScreenSaverIsSecure
               }
-              "b" {
+              "2" {
                   # Modify screen lock settings
                   $timeout = Read-Host "Enter new screen timeout in seconds (e.g., 900 for 15 minutes):"
                   Powershell.exe (Add-Type '[DllImport("user32.dll")]public static extern int SystemParametersInfo(int uAction, int uParam, int lpvParam, int fuWinIni);' -Name SetScreenSaverTimeout -Pas)::SetScreenSaverTimeout(0, $timeout, 0, 0)
@@ -41,14 +45,18 @@ while ($true) {
           }
       }
       "2" {
-          Display-Menu -SubMenu "Antivirus"
-          $antivirusChoice = Read-Host "Enter your antivirus choice (a or b):"
+          $subMenu = @"
+1. Check Antivirus Status
+2. Modify Antivirus Settings
+"@
+          Display-Menu -SubMenu $subMenu
+          $antivirusChoice = Read-Host "Enter your antivirus choice (1 or 2):"
           switch ($antivirusChoice) {
-              "a" {
+              "1" {
                   # Check antivirus status
                   Get-MpComputerStatus | Select-Object AntivirusEnabled, RealTimeProtectionEnabled
               }
-              "b" {
+              "2" {
                   # Modify antivirus settings
                   # Enable real-time protection if disabled
                   If ($false -eq (Get-MpComputerStatus).RealTimeProtectionEnabled) {
@@ -67,21 +75,29 @@ while ($true) {
           }
       }
       "3" {
-          Display-Menu -SubMenu "OS Updates"
-          $osUpdateChoice = Read-Host "Enter your OS update choice (a, b, or c):"
+          $subMenu = @"
+1. Check OS Version
+2. Check for Updates
+3. Update OS
+"@
+          Display-Menu -SubMenu $subMenu
+          $osUpdateChoice = Read-Host "Enter your OS update choice (1, 2, or 3):"
           switch ($osUpdateChoice) {
-              "a" {
+              "1" {
                   # Check OS version
                   Get-ComputerInfo | Select-Object WindowsProductName, WindowsVersion
               }
-              "b" {
+              "2" {
                   # Check for updates
                   Get-WUList | Where-Object {$_.IsInstalled -eq $false}
               }
-              "c" {
+              "3" {
                   # Update OS
                   Get-WUInstall -MicrosoftUpdate -AcceptAll -AutoReboot
                   Write-Host "OS updates initiated. The system may reboot automatically."
+              }
+              default {
+                  Write-Host "Invalid OS update choice. Please try again."
               }
           }
       }
