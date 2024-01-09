@@ -1,0 +1,1 @@
+I will purchase the voucher when I hear back from finance@codefellows.org.  I will also resubmit this assignment at that time.
