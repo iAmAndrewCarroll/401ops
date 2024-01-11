@@ -31,7 +31,9 @@ The data center is valued at 6,173,160.00 USD. If a flooding happens 15-30% of t
 - For each risk, what are at least two ways we could mitigate the risk?
 - For each risk, what is the most effective risk mitigation technique of the ideas you came up with? This should be the lowest cost and greatest mitigation.
 
-[Risk Assessment Worksheet](./Risk%20Assessment%20Worksheet.xlsx)
+[Risk Assessment Worksheet XLSX](./Risk%20Assessment%20Worksheet.xlsx)
+
+[Risk Assessment Worksheet PDF](./Risk%20Assessment%20Worksheet.pdf)
 
 ### Part 3: Quantitative Deterministic Risk Calculation
 ### Worst Case Scenario
