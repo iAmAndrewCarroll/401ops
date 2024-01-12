@@ -76,7 +76,7 @@ In some scenarios, you may need to harden an existing machine. Automating the pr
 - Test and validate it works as desired.
 - Copy it to your public GitHub repo as a new entry. Link to it in your submission.
 
-[Automation Script for 1.1.5 & 18.4.3]()
+[Automation Script for 1.1.5 & 18.4.3](https://github.com/iAmAndrewCarroll/401ops/blob/main/lab/scripts/lab4.ps1)
 
 ### Part 4: Pre-hardened EC2 instance deployment
 Now let’s compare this to a pre-hardened AMI.
@@ -106,7 +106,9 @@ Next, navigate to Security Hub and post the CIS dashboard in your submission doc
 - Paste your findings (security score visual and output table) into your submission doc.
 - Assess your findings. Make at least one change that improves the result of your CIS scan.
 - Report on your efforts (assessment, action, result), and recommend an SOP for company usage of EC2.
-- Note: There is no way to force Security Hub to run a scan. Security Hub rus the standard checks within 2 hours after enabled and checks again automatically within 12 hours from the latest scan.
+- Note: There is no way to force Security Hub to run a scan. Security Hub runs the standard checks within 2 hours after enabled and checks again automatically within 12 hours from the latest scan.
+
+![CIS Dashboard](media/cyber4-8.png)
 
 ### Part 6: Wrap-up
 Stop AWS resources deployed today in order to avoid charges. We will, however, be using AWS Security Hub (and other AWS tools) again in this course.
