@@ -1,6 +1,7 @@
 # Read 6: CIA Triad and CIS Benchmarks
 
 [Resource 1: Applying the CIA Triad to Your Enterprise File Transfer](https://www.jscape.com/blog/implementing-the-cia-triad-when-transferring-files-through-the-internet)
+
 [Resource 2: What Are MD5, SHA-1, and SHA-256 Hashes, and How Do I Check Them?](https://www.howtogeek.com/67241/htg-explains-what-are-md5-sha-1-hashes-and-how-do-i-check-them/)
 
 **1. You have been made responsible for the company’s file server. How would you preserve the three elements of the CIA triad?**
