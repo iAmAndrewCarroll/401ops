@@ -9,7 +9,7 @@
 - *Availability*: Ensure data availability by implementing redundancy and backup systems. This ensures that even if one server fails, the data remains accessible from another source, minimizing downtime.
 
 **2. Explain how hashing verifies data integrity using non-technical terms.**
-Hashing is like creating a unique fingerprint for a file. When a file is downloaded, its hash value is generated. If the file is later altered, even by a small change, the hash value will be significantly different. By comparing the downloaded file's hash value to the provided hash value, you can quickly check if the file is exactly as it should be. It's like verifying if a picture matches its unique fingerprint; if they match, the picture is unchanged and trustworthy.
+- Hashing is like creating a unique fingerprint for a file. When a file is downloaded, its hash value is generated. If the file is later altered, even by a small change, the hash value will be significantly different. By comparing the downloaded file's hash value to the provided hash value, you can quickly check if the file is exactly as it should be. It's like verifying if a picture matches its unique fingerprint; if they match, the picture is unchanged and trustworthy.
 
 **3. How is hashing and encryption different?**
 - *Hashing*: Hashing is a one-way process that generates a fixed-size string of characters (the hash value) from input data. It's primarily used for data integrity checks and cannot be reversed to retrieve the original data. It's like creating a unique seal for a document; you can verify if the document is tampered with, but you can't read its content from the seal.
