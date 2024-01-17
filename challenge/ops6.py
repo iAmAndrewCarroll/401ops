@@ -44,13 +44,25 @@ def decrypt_message(encrypted_message, key):
     except Exception as e:
         print(f"Error decrypting message: {e}")
 
-def main():
-    print("Choose a mode:\n1. Encrypt a file\n2. Decrypt a file\n3. Encrypt a message\n4. Decrypt a message")
-    choice = input("Enter your choice (1/2/3/4): ")
+def encrypt_folder(folder_path, key):
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            encrypt_file(file_path, key)
 
-    if choice in ['1', '3']:
+def decrypt_folder(folder_path, key):
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            decrypt_file(file_path, key)
+
+def main():
+    print("Choose a mode:\n1. Encrypt a file\n2. Decrypt a file\n3. Encrypt a message\n4. Decrypt a message\n5. Encrypt a folder\n6. Decrypt a folder")
+    choice = input("Enter your choice (1/2/3/4/5/6): ")
+
+    if choice in ['1', '3', '5']:
         key = generate_key()  # Generate a new key for encryption
-    elif choice in ['2', '4']:
+    elif choice in ['2', '4', '6']:
         key = load_key()  # Load the existing key for decryption
 
     if choice in ['1', '2']:
@@ -70,6 +82,15 @@ def main():
         elif choice == '4':
             encrypted_message = input("Enter the encrypted message to decrypt (without b' and '): ")
             print("Decrypted message:", decrypt_message(encrypted_message, key))
+
+    elif choice in ['5', '6']:
+        folder_path = input("Enter the folder path: ")
+        if choice == '5':
+            encrypt_folder(folder_path, key)
+            print("Folder and its contents encrypted successfully.")
+        elif choice == '6':
+            decrypt_folder(folder_path, key)
+            print("Folder and its contents decrypted successfully.")
 
 if __name__ == "__main__":
     main()
