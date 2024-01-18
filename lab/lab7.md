@@ -1,5 +1,3 @@
-
-
 # Lab: Protecting Data at Rest
 
 ## Overview
