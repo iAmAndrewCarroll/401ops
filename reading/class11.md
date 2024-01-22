@@ -1,6 +1,7 @@
 # Read 11: Setting up Splunk SIEM
 
 [Resource: Forbes - "Is Cybersecurity Automation The Future?"](https://www.forbes.com/sites/forbestechcouncil/2019/08/20/is-cybersecurity-automation-the-future/?sh=39f83610589c)
+
 [Resource: AT&T Cybersecurity - "Automated Incident Response in Action: 7 Killer Use Cases"](https://cybersecurity.att.com/blogs/security-essentials/automated-incident-response-in-action-7-killer-use-cases)
 
 ### Implementing a Security Orchestration, Automation, and Response (SOAR) solution offers several benefits to a security team:
