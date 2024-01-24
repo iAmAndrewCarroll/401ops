@@ -36,10 +36,28 @@ Complete the official Splunk Search Tutorial. For each component of the lab tuto
 
 Skip Parts 1 and 2. The required datasets have already been uploaded and indexed.
 - Part 3: Using the Splunk Search App
+- ![Search App](media/11.1.png)
+- ![Search App](media/11.2.png)
+- ![Search App](media/11.3.png)
+
 - Part 4: Searching the tutorial data
+- ![Search App](media/11.4.png)
+- ![Search App](media/11.5.png)
+- ![Search App](media/11.6.png)
+
 - Part 5: Enriching events with lookups
+- ![Search App](media/11.7.png)
+- ![Search App](media/11.8.png)
+- ![Search App](media/11.9.png)
+
 - Part 6: Creating reports and charts
+- ![Search App](media/11.10.png)
+- ![Search App](media/11.11.png)
+- ![Search App](media/11.12.png)
+- ![Search App](media/11.13.png)
+
 - Part 7: Creating dashboards
+- ![Search App](media/11.14.png)
 
 **Note**: The tutorial might ask you to set specific time ranges e.g., Previous Week, Last 24 hours. These might not yield the expected results; instead, select “All time”.
 
