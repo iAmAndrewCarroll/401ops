@@ -12,6 +12,6 @@
   - Broader Network Monitoring: NIDS can monitor an entire network segment, regardless of the target host's operating system, without requiring software installation on individual hosts. This makes it more suitable for large-scale network monitoring.
 
 **3. Name 3 major drawbacks of a NIDS:**
-- 1. **Inability to Prevent Incidents:** NIDS can detect and report intrusions but does not have the capability to block or prevent attacks on its own.
-- 2. **False Positives:** NIDS frequently generates false alarms, which can consume resources and require manual investigation. Responding to false positives effectively is crucial to avoid missing real threats.
-- 3. **Susceptibility to Protocol-Based Attacks:** NIDS, like network hosts, can be vulnerable to attacks targeting protocol vulnerabilities or causing protocol analyzer bugs.
+- **Inability to Prevent Incidents:** NIDS can detect and report intrusions but does not have the capability to block or prevent attacks on its own.
+- **False Positives:** NIDS frequently generates false alarms, which can consume resources and require manual investigation. Responding to false positives effectively is crucial to avoid missing real threats.
+- **Susceptibility to Protocol-Based Attacks:** NIDS, like network hosts, can be vulnerable to attacks targeting protocol vulnerabilities or causing protocol analyzer bugs.
