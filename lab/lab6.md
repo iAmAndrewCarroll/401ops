@@ -79,7 +79,17 @@ On your Linux VM in the cloud:
   - Confirm that they do NOT have full SSH shell access.
 - Document your setup and file transmission process and confirmations with screenshots and descriptions.
 
+![SSH Public Key Authentication](media/ops6-4.png)
+![SSH Public Key Authentication](media/ops6-5.png)
+![SSH Public Key Authentication](media/ops6-6.png)
+![SSH Public Key Authentication](media/ops6-7.png)
+![SSH Public Key Authentication](media/ops6-8.png)
+
 [Resource Steps](https://chat.openai.com/share/d564e0e0-e90b-4eb7-9e75-186fb4b284b5)
+
+![SSH Public Key Authentication](media/ops6-9.png)
+![SSH Public Key Authentication](media/ops6-10.png)
+![SSH Public Key Authentication](media/ops6-11.png)
 
 ### Part 4: Encryption and Decryption on Linux
 
