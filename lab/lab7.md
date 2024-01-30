@@ -42,6 +42,11 @@ Warning: This lab involves the encryption of significant clusters of data. If yo
 9. After entering the password, it will take you to the normal user login. Login as normal. On the system tray at the bottom right, BitLocker should now begin encrypting your Windows C: drive. You’ll want to take a screenshot when it completes, but for now, feel free to move onto Part 3 while you wait for the FDE procedure to complete.
 10. Verify your C: drive is in an encrypted state.
 
+![Bitlocker](media/ops7-1.png)
+![Bitlocker](media/ops7-2.png)
+![Bitlocker](media/ops7-3.png)
+![Bitlocker](media/ops7-4.png)
+
 ### Part 3: Linux Directory Encryption
 
 Sometimes you may only need to encrypt part of a file system. The Linux tool eCryptfs allows us to encrypt directories in a Linux system. This software package comes preinstalled on class-05-cryptor VM, which is where you’ll perform this part of the lab.
@@ -52,6 +57,10 @@ Sometimes you may only need to encrypt part of a file system. The Linux tool eCr
 4. Try viewing the document. You should be able to see the document because the directory is currently mounted.
 5. Unmount the directory with the `umount` command.
 6. Try viewing the document. You should now only see the ciphertext. Include a screenshot of the ciphertext on your submission.
+
+![eCryptfs](media/ops7-5.png)
+![eCryptfs](media/ops7-6.png)
+![eCryptfs](media/ops7-7.png)
 
 ### Part 4: Reporting
 
