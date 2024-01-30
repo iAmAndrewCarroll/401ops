@@ -96,11 +96,35 @@ OpenSSL can help us with handling digital certificates. In this part of the lab 
 
 The tutorial consists of three labs. Complete the Simple lab first. The subsequent Advanced and Expert labs are stretch goals.
 
+Create Root
+![Create Root](media/ops9-9.png)
+
+Create Signing CA
+![Create Signing CA](media/ops9-10.png)
+
+Operate Signing CA
+![Operate Signing CA](media/ops9-11.png)
+
+Output Formats/View Results
+![Output Formats/View Results](media/ops9-12.png)
+
 ### Part 5: Reporting
 Answer the below discussion prompts in your submission today.
-1. How can public key encryption utilities ensure integrity and confidentiality of data between two parties?
-2. Is PGP a secure protocol to be using?
-3. Why is PGP not very popular among casual computer users?
-4. Identify a website on the internet that does NOT have HTTPS (SSL) encryption in place.
-5. Why do you think the website lacks SSL encryption?
-6. What steps should the web administrator take in order to reconfigure the site to use SSL encryption?
+**1. How can public key encryption utilities ensure integrity and confidentiality of data between two parties?**
+- Public key encryption utilities use asymmetric cryptography, where each party has a pair of keys: a public key for encryption and a private key for decryption. Data is encrypted with the recipient's public key, ensuring confidentiality. The recipient uses their private key to decrypt the data, ensuring integrity.
+
+**2. Is PGP a secure protocol to be using?**
+- PGP (Pretty Good Privacy) is considered secure when implemented correctly. However, like any security protocol, its effectiveness depends on key management, usage, and implementation.
+
+**3. Why is PGP not very popular among casual computer users?**
+- PGP is not very popular among casual users due to its complexity, lack of user-friendly interfaces, and the need for a good understanding of key management, which can be daunting for non-technical users.
+
+**4. Identify a website on the internet that does NOT have HTTPS (SSL) encryption in place.**
+- One example of a website without HTTPS (SSL) encryption is "http://example.com."
+
+**5. Why do you think the website lacks SSL encryption?**
+- The website might lack SSL encryption due to cost considerations, lack of awareness about security risks, or because it doesn't handle sensitive data. 
+
+**6. What steps should the web administrator take in order to reconfigure the site to use SSL encryption?**
+- The web administrator should obtain an SSL certificate from a trusted Certificate Authority, install it on the web server, and configure the server to use HTTPS. They should also update internal links, ensure mixed content is resolved, and monitor for security updates.
+
