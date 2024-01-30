@@ -37,6 +37,8 @@ First prepare the Windows 10 environment.
 Next prepare the Ubuntu Linux Desktop environment.
 1. Download and install gnupg2 and gpa.
 
+![gnupg2 and gpa downloads](media/ops9-1.png)
+
 ### Part 2: Message Encryption with Gpg4win on Windows 10
 OpenPGP is usable in Windows environments as Gpg4win. You’ll need a partner for Part 2 and Part 3 of today’s lab. If you still don’t have a partner, contact your instructor.
 
@@ -50,12 +52,20 @@ Each partner will perform the following operations on their own system:
 7. Receive their message, copy it into the “Notepad” feature, and use Kleopatra to decrypt the message using your private key.
 8. Once you have successfully decrypted your partner’s message into cleartext, this part of today’s lab is complete. Include in your lab submission a screenshot of the ciphertext and cleartext.
 
+Raw Message
+![Raw Message](media/ops9-2.png)
+
+Encrypted Message
+![Encrypted Message](media/ops9-3.png)
+
 ### Part 3: Email Encryption with GPG on Ubuntu Linux Desktop
 OpenPGP is usable in Linux environments as GNU Privacy Guard (GPG). Each partner will perform the following operations on their own system:
 1. Perform a full key pair generation operation in GPG:
+- `gpg --gen-key`
    - RSA and RSA
    - 4096 key size
    - Key should not expire
+   
 2. Launch GNU Privacy Assistant (GPA) GUI key manager application. Your new key pair from GPG should appear here.
 3. Export your public key to your Ubuntu Linux desktop with a .txt file extension as “public_key”.
 4. Share your public key with your lab partner. If you like, publish your public key or through a service like keybase.io.
