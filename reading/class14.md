@@ -1,4 +1,4 @@
-# The Pros & Cons of Intrusion Detection Systems
+# Reading 14: The Pros & Cons of Intrusion Detection Systems
 
 [Resource: The Pros & Cons of Intrusion Detection Systems](https://www.rapid7.com/blog/post/2017/01/11/the-pros-cons-of-intrusion-detection-systems/)
 
