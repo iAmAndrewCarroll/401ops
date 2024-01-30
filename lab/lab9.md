@@ -65,7 +65,7 @@ OpenPGP is usable in Linux environments as GNU Privacy Guard (GPG). Each partner
    - RSA and RSA
    - 4096 key size
    - Key should not expire
-   
+
 2. Launch GNU Privacy Assistant (GPA) GUI key manager application. Your new key pair from GPG should appear here.
 3. Export your public key to your Ubuntu Linux desktop with a .txt file extension as “public_key”.
 4. Share your public key with your lab partner. If you like, publish your public key or through a service like keybase.io.
@@ -75,6 +75,21 @@ OpenPGP is usable in Linux environments as GNU Privacy Guard (GPG). Each partner
 8. Send the encrypted message to your lab partner.
 9. When you receive the encrypted message from your lab partner, decrypt it.
 10. Once you have successfully decrypted your partner’s message into cleartext, this part of today’s lab is complete. Include in your lab submission a screenshot of the ciphertext and cleartext.
+
+Create Keys
+![Create Keys](media/ops9-4.png)
+
+Launch GNU
+![Launch GNU](media/ops9-5.png)
+
+Encrypted PGP
+![Encrypted PGP](media/ops9-6.png)
+
+Checked Signature
+![Checked Signature](media/ops9-7.png)
+
+Decrypted PGP
+![Decrypted PGP](media/ops9-8.png)
 
 ### Part 4: Certificates and SSL with OpenSSL
 OpenSSL can help us with handling digital certificates. In this part of the lab you will create a CA, sign and issue certificates using OpenSSL certificate tutorial.
