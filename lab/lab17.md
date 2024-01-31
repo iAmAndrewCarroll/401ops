@@ -44,6 +44,9 @@ AWS provides you a “default VPC” whenever you launch an EC2 instance. In thi
   - Choose `Action` and under `Edit subnet settings`.
   - Select `Enable auto-assign public IPv4 address` and choose `Save and Close`.
 
+Just lovely **Subnets**
+![Subnets](media/ops17-1.png)
+
 ### Part 2: Create an Internet Gateway
 Instead of physical router appliances, in the cloud we use objects called internet gateways instead. Whenever you have a public subnet in a VPC, you’ll need to deploy an internet gateway. An **internet gateway (IGW)** is a virtual router that connects a VPC to the internet.
 
@@ -53,7 +56,8 @@ Instead of physical router appliances, in the cloud we use objects called intern
   - Select `class-17-vpc`.
   - What is the AWS CLI command corresponding to this action?
 
-- You should get a success message and see the State changed to “Attached.”
+You should get a success message and see the State changed to “Attached.”
+![Internet Gateway](media/ops17-2.png)
 
 Now that we created an Internet gateway, we need to create a route to the Internet.
 
@@ -71,6 +75,9 @@ Now that we created an Internet gateway, we need to create a route to the Intern
 
   - Continue to click on Action, then Edit Subnet Association.
   - Select `class-17-public-subnet` and click Save.
+
+Route Tables
+![Route Tables](media/ops17-3.png)
 
 ### Part 3: Security Groups
 A **security group** is a virtual firewall that determines what network traffic can pass into and out of your instance. You’ll need to create, configure, and assign one to your new VPC. Whenever you launch a new EC2 instance, you’ll need to check and make sure the correct security group is associated.
@@ -92,6 +99,10 @@ A **security group** is a virtual firewall that determines what network traffic 
   - If successful, you’ll see “Security group (name) was created successfully.” If you ran into issues, troubleshoot until resolved.
   - Include a screenshot of your “Inbound Rules” table in your submission. It should have exactly five entries.
 
+Security Groups
+![Security Groups](media/ops17-4.png)
+![Rules](media/ops17-5.png)
+
 ### Part 4: Instance Deployment
 Switch back to EC2 and launch the following instances:
 
@@ -101,7 +112,10 @@ Switch back to EC2 and launch the following instances:
   - AWS should warn you with something like this:
     - Improve your instances’ security. Your security group, `class-17-vpc-security-group`, is open to the world. Your instances may be accessible from any IP address. We recommend that you update your security group rules to allow access from known IP addresses only. You can also open additional ports in your security group to facilitate access to the application or service you’re running, e.g., HTTP (80) for web servers.
   - Note: At this point you can test ping and SSH from Internet to this instance and it should work.
+
   - Is this a concern, or does it fit with the goals of your cloud architecture?
+    - This is a concern under normal circumstances but this is just a lab assignment so I'm not concerned about it.  What delightfully glaring security holes we have here!
+
   - As a stretch goal, change the security group to only allow traffic from your computer’s public IP address. Re-attempt launching the EC2 instance and see if this warning is cleared.
 
 - Ubuntu Server 20.04 LTS (HVM), SSD Volume Type to `class-17-private-subnet`
@@ -110,6 +124,10 @@ Switch back to EC2 and launch the following instances:
   - AWS may warn you with the same prompt as before.
   - Is this a concern, or does it fit with the goals of your cloud architecture?
   - Note: At this point you can test pinging google from this instance and it should not work.
+
+Instance Creation
+![Instance Creation](media/ops17-6.png)
+![Instance Creation](media/ops17-7.png)
 
 ### Part 5: NAT Gateway
 Normally, a NAT gateway translates IPs to allow communication between two networks. In AWS, however, a NAT Gateway is an object that provides communication between different subnets within a VPC.
@@ -126,6 +144,10 @@ Normally, a NAT gateway translates IPs to allow communication between two networ
     - Value: `class-17-NAT`
   - Choose Create a NAT Gateway
 
+NAT Gateway
+![NAT Gateway](media/ops17-8.png)
+![NAT Gateway](media/ops17-9.png)
+
 ### Part 6: Configure Route Table for NAT Gateway
 In the left navigation pan, choose Route Tables and Create Route Table
 - Apply a name tag:
@@ -139,6 +161,10 @@ In the left navigation pan, choose Route Tables and Create Route Table
 - Choose Save Route.
 - Continue to click on Action, then Edit Subnet Association.
 - Select `class-17-private-subnet` and click Save.
+
+NAT Gateway
+![NAT Gateway](media/ops17-10.png)
+![NAT Gateway](media/ops17-11.png)
 
 Note: At this point you can test pinging google from this instance and it should work.
 
