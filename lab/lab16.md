@@ -1,4 +1,4 @@
-# Lab: Cloud Identity and Access Management (IAM) with AWS
+# Lab 16: Cloud Identity and Access Management (IAM) with AWS
 
 ## Overview
 
