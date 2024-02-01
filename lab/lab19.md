@@ -81,10 +81,17 @@ Now that weâ€™ve tinkered with automated responses to events in the cloud, letâ€
 - In the Security Standards menu, check account compliance.
 - Confirm in Findings that the sample findings from GuardDuty were also reported in AWS Security Hub.
   - What details were provided for these findings?
+    - None, because I was unable to get GuardDuty to talk to Security Hub.
 - Navigate the Insights page.
-  - What instance had the most findings?
-  - What security issues are there?
-  - What should the company address first and why?
+  - What instance had the most findings?  I am not sure 
+  - What security issues are there?  I see a lot of high priority malicious and unauthorized activity to create backdoors and shells and such.
+  - What should the company address first and why? All the high severity findings.
+    - **I can't answer any of these questions because I was unable to get GuardDuty to talk to Security Hub.  I got help from a tutor and other members of the class.**
+
+Security Hub No Results
+![SecHub No Rez](media/ops19-6.png)
+![SecHub No Rez](media/ops19-7.png)
+
 
 ### Part 4: Wrap Up
 - GuardDuty can be disabled from GuardDuty Console > Settings > Disable GuardDuty.
