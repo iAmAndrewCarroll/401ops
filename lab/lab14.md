@@ -92,6 +92,7 @@ Now that you're confident in writing custom Snort rules, try using the pre-made 
 - Load the rules pack into Snort.
 - Using nmap on Kali, run various scans against the PC hosting Snort.
 - Document your results, including what was detected VS not detected.
+- My VMs wouldn't connect to the internet, so I couldn't download the ruleset.
 
 ### Part 4: Reporting
 Answer the below discussion prompts in your own words:
