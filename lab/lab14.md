@@ -43,31 +43,47 @@ Next, you'll need to deploy Snort to a Ubuntu Linux Desktop VM. Make sure there 
 3. Run `sudo apt-get install snort`
 4. Snort's installer will prompt you for network information so that it can stage the snort.conf file for you.
 5. You can initialize Snort with `sudo snort -c snort.conf -A console -i [network interface name]`, note that you need to specify your network interface name accordingly.
+
+Snort Running:
+![Snort Running](media/ops14-2.png)
 6. Review the snort.conf file and make sure your network settings are correct.
 
 ### Part 2: Detecting Network Activity with Custom Snort Rules
 For this portion of the lab, you'll be writing and testing your own Snort rules in an effort to detect specific types of traffic that will help alert the defender to intruder activities such as Nmap enumeration attempts.
 
+**Write a Snort Rule:** `cd /etc/snort/rules`.  
+- Use `sudo nano rulename.rules` to create a new rule file.
+  - Example rule: `alert icmp any any -> [Snort Host IP] any (msg:"ICMP packet detected"; sid:1000001;)`
+  - save this new rule.
+- `cd ..` to return to the snort directory.
+- `sudo nano snort.conf` to add the new rule to the snort.conf file.
+  - Add the following line to the end of the file: `include $RULE_PATH/rulename.rules`
+  - Save the file.
+
 Write and test a Snort rule that detects when ICMP packets transmitted to its IP from the internet and raises an alert to the console.
 - Issue the nmap test command: `nmap -sn [Snort host IP] -disable-arp-ping`.
 - Include a screenshot of this and the alert in your submission.
-
-Issue the nmap test command: `nmap -sn [network IP with CIDR block] -disable-arp-ping`.
+- Issue the nmap test command: `nmap -sn [network IP with CIDR block] -disable-arp-ping`.
 - Observe Snort alerts. What are you seeing, and what is happening?
+![ICMP Alert](media/ops14-3.png)
+![ICMP Alert](media/ops14-4.png)
 
 Write and test a Snort rule that detects when Kali Linux VM attempts an FTP connection to another local PC and raises an alert to the console.
 - Issue the Kali Linux console test command: `ftp [target host IP]`.
 - Include a screenshot of this and the alert in your submission.
+![FTP Alert](media/ops14-5.png)
 
 Write and test a Snort rule that detects when Kali Linux VM attempts an SSH connection to another local PC and raises an alert to the console.
 - Test the command using Kali Linux console command.
 - Include a screenshot of this and the alert in your submission.
 - Test the command using Nmap command.
 - Include a screenshot of this and the alert in your submission.
+![SSH Alert](media/ops14-6.png)
 
 Write and test a Snort rule that detects when Kali Linux VM attempts an HTTP connection to another local PC and raises an alert to the console.
 - Test the rule using a web browser in Kali Linux.
 - Include a screenshot of this and the alert in your submission.
+![HTTP Alert](media/ops14-7.png)
 
 ### Part 3: Detecting Network Activity with Premade Snort Rules
 Now that you're confident in writing custom Snort rules, try using the pre-made rulesets.
@@ -80,9 +96,21 @@ Now that you're confident in writing custom Snort rules, try using the pre-made 
 ### Part 4: Reporting
 Answer the below discussion prompts in your own words:
 
-- How does Snort differ from a LAN firewall appliance?
-- Why would a security team deploy an NIDS solution?
-- What are some limitations/shortcomings of an NIDS solution? In other words, what malicious activity would an NIDS not detect?
+**1. How does Snort differ from a LAN firewall appliance?**
+- **Snort**: Primarily a Network Intrusion Detection System (NIDS), it monitors network traffic for suspicious activity and logs or alerts based on predefined rules. It focuses on analyzing traffic and identifying potential threats.
+- **LAN Firewall Appliance**: Primarily concerned with controlling access to a network by allowing or blocking traffic based on predefined security rules. It acts as a barrier at the network's entry points to prevent unauthorized access.
+
+**2. Why would a security team deploy a NIDS (Network Intrusion Detection System) solution?**
+- **Detection of Intrusions**: To monitor network traffic for signs of malicious activity or policy violations.
+- **Security Posture Analysis**: To gain insights into the network's security status and identify potential vulnerabilities.
+- **Compliance and Forensics**: To meet regulatory compliance requirements and aid in forensic analysis during or after a cyber incident.
+
+**3. What are some limitations/shortcomings of a NIDS solution? In other words, what malicious activity would a NIDS not detect?**
+- **Encrypted Traffic**: NIDS often cannot inspect the contents of encrypted traffic (like HTTPS), potentially missing malicious activity within it.
+- **Evasion Techniques**: Attackers can use sophisticated evasion techniques (like fragmenting packets) to bypass detection.
+- **High Volume of False Positives/Negatives**: NIDS can generate false alarms (flagging benign activities as malicious) or miss actual threats, requiring careful tuning and constant updates.
+- **Internal Network Threats**: Limited in detecting malicious activity originating from within the network, especially if the traffic does not cross the NIDS monitoring point.
+- **Resource Intensive**: Monitoring and analyzing all network traffic can be resource-intensive and may lead to performance issues.
 
 Stretch Goals (Optional Objectives)
 Pursue these optional objectives if you are an advanced user or have remaining lab time.
