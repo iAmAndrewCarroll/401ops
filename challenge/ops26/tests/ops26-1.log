@@ -1,0 +1,10 @@
+2024-02-12 20:24:48,231 INFO:Wordlist read successfully from test_wordlist.txt
+2024-02-12 20:24:48,231 DEBUG:Word iterated: password123
+2024-02-12 20:24:48,733 DEBUG:Word iterated: 123456
+2024-02-12 20:24:49,236 DEBUG:Word iterated: admin123
+2024-02-12 20:24:49,743 WARNING:Search string not found: password123
+2024-02-12 20:33:59,922 INFO:Wordlist read successfully from test_wordlist.txt
+2024-02-12 20:33:59,922 DEBUG:Word iterated: password123
+2024-02-12 20:34:00,427 DEBUG:Word iterated: 123456
+2024-02-12 20:34:00,933 DEBUG:Word iterated: admin123
+2024-02-12 20:34:01,440 INFO:Search string found: password123
