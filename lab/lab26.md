@@ -33,6 +33,8 @@ Cyberdyne’s Security Director, Miles Dyson, is your point of contact for this 
 ### Part 1: Staging
 This lab utilizes Splunk Enterprise (Trial), Windows Server 2019, and Windows 10. If you’d like to start term 2 with a working baseline threat detection lab environment in VirtualBox, download and import Term2-baseline-lab-v5.zip. You are welcome to use your own VMs instead, but you may need to manually configure things such as VirtualBox network adapters, etc. If you end up using the provided baseline lab, skip to the final two items in the list below. The remaining labs in this module will be instructing you as if you are using the provided lab environment.
 
+**if winserv is not talking to win10, check the firewall settings on win10.  Additionally, on winserv go to control panel > network and internet > network and sharing center > change adapter settings > right click on the adapter > properties > IPv4 > properties > Obtain IP and DNS automatically**
+
 - Prepare a Windows 10 VM
 - Install Sysmon on Windows 10 VM
 - Install Splunk Universal Forwarder on Windows 10 VM to forward logs in real time to Splunk
