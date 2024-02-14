@@ -1,10 +1,10 @@
 import sys
 import os
 
-# Update the path to include the ops26_1 directory
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'ops26_1'))
+# Update the path to include the ops26_2 directory
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'ops26_2'))
 
-from ops26_1_core import read_wordlist, dictionary_iterator, password_recognized, ssh_brute_force, zip_brute_force
+from ..ops26_1_core import read_wordlist, dictionary_iterator, password_recognized, ssh_brute_force, zip_brute_force
 
 def run_tests():
     # Create a test wordlist

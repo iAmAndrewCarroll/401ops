@@ -1,10 +1,35 @@
+import os
 import time
 import paramiko
 import zipfile
 import logging
+from logging.handlers import RotatingFileHandler, TimedRotatingFileHandler
+
+# Check if the log file exists, if not, create it
+if not os.path.exists('ops26-1.log'):
+    with open('ops26-1.log', 'w'):
+        pass
 
 # Setup basic logging
-logging.basicConfig(filename='ops26-1.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s:%(message)s')
+# Create a rotating file handler for size-based rotation
+size_handler = RotatingFileHandler('ops26-1.log', maxBytes=1000000, backupCount=5)
+# Create a timed rotating file handler for time-based rotation
+time_handler = TimedRotatingFileHandler('ops26-1.log', when='midnight', interval=1, backupCount=5)
+
+# Set logging level to DEBUG
+size_handler.setLevel(logging.DEBUG)
+time_handler.setLevel(logging.DEBUG)
+
+# Set format for log entries
+formatter = logging.Formatter('%(asctime)s %(levelname)s:%(message)s')
+size_handler.setFormatter(formatter)
+time_handler.setFormatter(formatter)
+
+# Add the handlers to the logger
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+logger.addHandler(size_handler)
+logger.addHandler(time_handler)
 
 def read_wordlist(file_path):
     try:

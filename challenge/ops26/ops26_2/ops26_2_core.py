@@ -46,10 +46,17 @@ def export_results(scan_results, filename):
 def generate_ip_range(cidr):
     try:
         network = ipaddress.ip_network(cidr, strict=False)
-        return [str(ip) for ip in network.hosts()]
+        network_address = str(network.network_address)
+        broadcast_address = str(network.broadcast_address)
+        print(f"Network Address: {network_address}")
+        print(f"Broadcast Address: {broadcast_address}")
+        
+        # Exclude network and broadcast addresses from the list
+        return [str(ip) for ip in network.hosts() if ip != network.network_address and ip != network.broadcast_address]
     except ValueError as e:
         logging.error(f"Invalid CIDR block: {str(e)}")
         return []
+
 
 def icmp_ping_sweep(ip_list):
     online_hosts = 0
@@ -71,9 +78,13 @@ def icmp_ping_sweep(ip_list):
                 online_hosts += 1
         except Exception as e:
             logging.error(f"Error during ICMP ping sweep on {ip}: {str(e)}")
+            print(f"Error during ICMP ping sweep on {ip}: {str(e)}")
 
     print(f"\nTotal online hosts: {online_hosts}")
     logging.info(f"Total online hosts: {online_hosts}")
+
+# Debug prints
+print("Debug: Function definition has been updated.")
 
 def scan_ip_and_ports(target_ip):
     try:
@@ -83,49 +94,10 @@ def scan_ip_and_ports(target_ip):
             result = scan_port(target_ip, port)
             scan_results.append(result)
             if result[1] == "Interrupted":
-                break
+                raise KeyboardInterrupt
 
         export_results(scan_results, "scan_results")
         print("Scan results exported successfully.")
     except KeyboardInterrupt:
         logging.warning("Port scanning operation interrupted by user.")
-        print("\nScan interrupted by user.")
-
-def main():
-    try:
-        while True:
-            print("1. Scan IP Address and Ports")
-            print("2. ICMP Ping Sweep")
-            print("3. Exit")
-            choice = input("Select an option (1, 2, or 3): ")
-
-            if choice == "1":
-                target_ip = input("Enter target IP: ")
-                icmp_response = sr1(IP(dst=target_ip)/ICMP(), timeout=1, verbose=0)
-                if icmp_response is not None:
-                    print(f"{target_ip} is responding to ICMP ping.")
-                    logging.info(f"{target_ip} is responding to ICMP ping")
-                    scan_ip_and_ports(target_ip)
-                else:
-                    print(f"{target_ip} is down or not responding to ICMP ping.")
-                    logging.info(f"{target_ip} is down or not responding to ICMP ping")
-            elif choice == "2":
-                cidr = input("Enter network address (CIDR format, e.g., 192.168.1.0/24): ")
-                ip_list = generate_ip_range(cidr)
-                if ip_list:
-                    icmp_ping_sweep(ip_list)
-                else:
-                    print("Invalid CIDR block. Please enter a valid CIDR.")
-            elif choice == "3":
-                logging.info("Program exited by user.")
-                break
-            else:
-                print("Invalid choice. Please select a valid option.")
-                logging.warning("Invalid choice made in main menu.")
-
-    except KeyboardInterrupt:
-        logging.info("Operation cancelled by user.")
-        print("\nOperation cancelled by user.")
-
-if __name__ == "__main__":
-    main()
+        print("Scan interrupted by user.")  # Removed the leading newline character
