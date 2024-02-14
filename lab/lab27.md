@@ -21,8 +21,15 @@ After reviewing your findings, Security Director Dyson shakes his head during a 
 ### Part 1: Staging
 For today’s lab you’ll need a Windows 10 VM and a Kali Linux VM with Empire installed. Kali will be our C2 server. To install PowerShell Empire on your Kali VM, simply run the command: sudo apt install powershell-empire
 
+Windows & Kali talking
+![Windows & Kali Talking](media/lab27-1.png)
+
+
 - Start PowerShell Empire
 - Open up a terminal and start the Empire server by running `sudo powershell-empire server`. When the Empire server starts successfully, open up another terminal and start the Empire client by running `sudo powershell-empire client`. You should now have the Empire interactive prompt.
+
+Empire Running
+![Empire Running](media/lab27-2.png)
 
 ### Part 2: Setup a Listener
 To prepare the attack, you’ll need to setup a listener in Empire. Reference the provided resources as to how to execute the procedures in this lab. Make sure the listener is running before proceeding to the next stage fo the lab.
@@ -38,6 +45,9 @@ To prepare the attack, you’ll need to setup a listener in Empire. Reference th
 - `set Port [number]` can change the port number of your listener
 - `execute` will run the listener; a listener must be running in order to capture inbound data from the victim
 
+Listening
+![Listening](media/lab27-3.png)
+
 ### Part 3: Setup a Stager
 Next, it’s time to setup a stager. Generate launcher.bat, copy it to the victim host, then run it from the terminal (you won’t see the output if you run it in File Explorer).
 
@@ -48,6 +58,15 @@ Next, it’s time to setup a stager. Generate launcher.bat, copy it to the victi
 - `agents` lists compromised systems that you now have access to.
 - `rename [current] [new]` changes the agent’s name.
 - `interact [agent name]` launches the shell.
+
+**Generate launcher.bat**
+`/var/lib/powershell-empire/empire/client/generated-stagers/launcher.bat` is the path to the stager. Copy this file to the Windows 10 VM.
+
+Generate launcher.bat
+![Generate launcher.bat](media/lab27-4.png)
+
+Rejected SSH Connection
+![Rejected SSH Connection](media/lab27-5.png)
 
 ### Part 4: Reporting
 Discuss in your own words the following:
