@@ -1,6 +1,7 @@
 # Read 29: Application Threat Modelling & A Beginner's Guide to the STRIDE Security Threat Model
 
 [Resource: Application Threat Modelling](https://owasp.org/www-community/Threat_Modeling)
+
 [Resource: A Beginner's Guide to the STRIDE Security Threat Model](https://www.ockam.io/blog/introduction_to_STRIDE_security_model)
 
 **1. Explain threat modeling using a scarier real-world non-technical example:**
