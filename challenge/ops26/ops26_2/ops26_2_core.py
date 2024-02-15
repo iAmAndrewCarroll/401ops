@@ -5,9 +5,23 @@ import os
 import ipaddress
 import logging
 from tqdm import tqdm
+from logging.handlers import RotatingFileHandler, TimedRotatingFileHandler
 
 # Setup basic logging
-logging.basicConfig(filename='ops26-2.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s:%(message)s')
+size_handler = RotatingFileHandler('ops26-2.log', maxBytes=1000000, backupCount=5)
+time_handler = TimedRotatingFileHandler('ops26-2.log', when='midnight', interval=1, backupCount=5)
+
+size_handler.setLevel(logging.DEBUG)
+time_handler.setLevel(logging.DEBUG)
+
+formatter = logging.Formatter('%(asctime)s %(levelname)s:%(message)s')
+size_handler.setFormatter(formatter)
+time_handler.setFormatter(formatter)
+
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+logger.addHandler(size_handler)
+logger.addHandler(time_handler)
 
 def scan_port(ip, port):
     try:
@@ -51,12 +65,10 @@ def generate_ip_range(cidr):
         print(f"Network Address: {network_address}")
         print(f"Broadcast Address: {broadcast_address}")
         
-        # Exclude network and broadcast addresses from the list
         return [str(ip) for ip in network.hosts() if ip != network.network_address and ip != network.broadcast_address]
     except ValueError as e:
         logging.error(f"Invalid CIDR block: {str(e)}")
         return []
-
 
 def icmp_ping_sweep(ip_list):
     online_hosts = 0
@@ -83,9 +95,6 @@ def icmp_ping_sweep(ip_list):
     print(f"\nTotal online hosts: {online_hosts}")
     logging.info(f"Total online hosts: {online_hosts}")
 
-# Debug prints
-print("Debug: Function definition has been updated.")
-
 def scan_ip_and_ports(target_ip):
     try:
         scan_results = []
@@ -100,4 +109,4 @@ def scan_ip_and_ports(target_ip):
         print("Scan results exported successfully.")
     except KeyboardInterrupt:
         logging.warning("Port scanning operation interrupted by user.")
-        print("Scan interrupted by user.")  # Removed the leading newline character
+        print("Scan interrupted by user.")

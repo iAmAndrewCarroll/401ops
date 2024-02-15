@@ -1,4 +1,5 @@
 from ops26_1_core import read_wordlist, dictionary_iterator, password_recognized, ssh_brute_force, zip_brute_force
+import logging
 
 def main():
     while True:
@@ -43,4 +44,18 @@ def main():
             file_path = input("Enter the word list file path (RockYou.txt recommended): ")
 
             words = read_wordlist(file_path)
-            if words is not None and zip_br
+            if words is not None and zip_brute_force(zip_file_path, words):
+                print("Password cracked successfully.")
+            else:
+                print("ZIP File Brute Force attempt failed or completed without success.")
+
+        elif choice == '4':
+            logging.info("Program exited by user.")
+            break
+
+        else:
+            print("Invalid choice. Please select a valid option.")
+            logging.warning("Invalid choice made in main menu.")
+
+if __name__ == "__main__":
+    main()
