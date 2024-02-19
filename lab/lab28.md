@@ -53,6 +53,9 @@ Report on all completed Atomic Testing Cycles using the chosen Atomic Test. Desc
 Run further Atomic Tests to increase your exposure to MITRE ATT&CK and Atomic Red Team. If you’ve thought of an interesting Atomic Test of your own, consider contributing to the project.
 
 
+siem VM: runs in the background, collects logs from the Windows 10 VM
+windows 10 VM: universal fowarder
+WinServer: Splunk
 
 
 

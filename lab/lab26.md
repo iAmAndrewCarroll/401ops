@@ -51,23 +51,38 @@ In this part of the lab, we will investigate the data set by consulting the PsEx
 - In Windows Server VM, access Splunk at http://10.0.0.5:8000/en-US/app/launcher/home and login with splunkadmin / splunkadmin.
 - Perform the search `index="class-26"` to view today’s sample data set that has been imported from Mordor Data Sets.
 - Identify the three event logs where a network connection was established using powershell.exe
+  - `index="class-26" EventCode=3 Image="powershell.exe"`
+
 - Include a screenshot of Splunk indicating the SPL query you used to exclusively display these three logs according to the stated attributes
+![Splunk indicating the SPL query](media/lab26-SPLquery.png)
   - What port was used throughout the attack?
+    - SourcePort: 56608
+    - DestinationPort: 49726
   - What is the domain prefix and account name that invoked PsExec (e.g. RIVENDELL\Elessar)?
+    - Domain: THESHIRE
+    - User: pgustavo
+    - THESHIRE\\pgustavo
   - When did this invocation take place?
+    - 2020-09-20 12:16:57
   - What is the location of the executable that this process used?
+    - C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
   - What TTPs were used in this attack?
+    - 
   - What part of the kill chain is this?
+    - Possibly 'Execution' or 'Lateral Movement'
 
 ### Part 3: Simulation of this
 Now that we have an idea of what this attack might look like, let’s reproduce the remote code execution in our own lab environment. For this simulation we won’t be using Empire, but instead be using Invoke-PsExec as a standalone tool from our Windows Server VM. The required components of this activity have been pre-staged for you in the provided baseline lab package. However, feel free to experiment. For example, if Invoke-PsExec isn’t getting the job done for you, try PsExec from Microsoft Sysinternals instead.
 
-- In Windows Server VM, access Splunk at http://10.0.0.5:8000/en-US/app/launcher/home
-- Check that regular event logs are being correctly forwarded from Win10 by querying `host="DESKTOP-XXXXX"`. Note: Replace the host name with the name of your Win10 VM.
+- In Windows Server VM, access Splunk at http://10.0.2.16:8000/en-US/app/launcher/home
+- Check that regular event logs are being correctly forwarded from Win10 by querying `host="DESKTOP-62LU9FS"`. Note: Replace the host name with the name of your Win10 VM.
 - Check that Sysmon logs are being correctly forwarded from Win10 by querying `source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"`.
 - From Windows Server, access `C:\Users\Administrator\Desktop\ops-cyber-401\Invoke-PsExec.ps1` using PowerShell IDE running as Administrator.
 - Execute this script a few times.
 - Review your event logs and Sysmon logs. Did this activity generate new logs? Include a screenshot of them.
+![host="DESKTOP-62LU9FS"](media/lab26-`host="DESKTOP-62LU9FS"`.png)
+![source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"](media/lab26-sysmonLogs.png.png)
+
 - Modify the PowerShell script to execute a simple batch script file on the Win10 box instead of a command.
 - Run it a few times.
 - Does this affect the type of event logs coming into Splunk?
@@ -77,11 +92,17 @@ Now that we have an idea of what this attack might look like, let’s reproduce 
 Explain:
 
 - Summarize what you’ve done and learned today. What are your key takeaways?
+  - slightly better at Splunk and Sysmon...
 - How do Sysmon logs differ from regular event logs?
+  - Sysmon logs are more detailed and provide more information about the system and its processes
 - Which type was more useful in this scenario?
+  - Sysmon logs
 - How can a Windows system be vulnerable to RCE?
+  - If a system is not properly patched and updated, it can be vulnerable to RCE (Remote Code Execution)
 - Referencing MITRE ATT&CK, what are some other tools and techniques besides Invoke-PsExec that can be used to perform RCE?
+  - Some other tools and techniques that can be vulnerable to RCE include: PsExec, PowerShell, and WMI
 - What are some countermeasures against RCE?
+  - RCE (Remote Code Execution) can be mitigated by keeping systems up to date and patched, using firewalls, and using intrusion detection systems
 
 ## Stretch Goals (Optional Objectives)
 Preventative measures are important to practice. If time allows, develop and test a PowerShell script that sets configurations on Win10 that protect the system from this PowerShell RCE technique. This should execute against how you replied to the question in Part 4, “What are some countermeasures against RCE?”
