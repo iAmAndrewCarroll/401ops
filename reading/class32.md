@@ -1,6 +1,7 @@
 # Read 32: Malware Traffic Analysis with Wireshark
 
 [Resource: What is Malware Analysis?](https://www.spiceworks.com/it-security/data-security/articles/what-is-malware-analysis-definition-types-stages-best-practices/)
+
 [Resource: ChatGPT, Google, and YouTube](https://www.youtube.com/watch?v=H1bb92CPSGk)
 
 # Malware Analysis Overview
