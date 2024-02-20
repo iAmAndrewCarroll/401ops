@@ -39,6 +39,11 @@ Generate a threat model DFD using Microsoft Threat Modeling Tool. Elements of yo
   - Administrator access
   - All security mechanisms in place such as encryption protocols
 
+This is clearly [A Resourced: ChatGPT Image Generation: DFD](https://chat.openai.com/c/04f65164-8b5a-4484-8878-a51c73f6b3d5) that I prompted.
+![TPS Reports and Data Flow Diagrams.  Somebody's got a case of the Mondays...From the 1999 movie Office Space with Ron Livingston, Jennifer Aniston, David Herman, Deidrich Bader, and Stephen Root.](media/lab29-1.jpg)
+
+![Icons and teardrops.  A data flow diagram.](media/lab29-2.jpg)
+
 ### Part 3: Communicate Findings
 Referencing the example in Template Sample: Web Application Threat Model, compose in your submission a full web application threat modeling report. Use DREAD to guide your thought process on what threats are present.
 - Utilize Template: Web Application Threat Model
