@@ -61,6 +61,7 @@ For this part, feel free to use the AWS web GUI.
    ![EC2-Support](media/ops16-2.png)
    ![Admin](media/ops16-3.png)
 
+
 ### Part 3: Reporting
 
 - How did your testing go? None of the users could access anything. The AWS CLI was disabled on all users. I checked the admin settings and inline policies and nothing came of it.
