@@ -49,63 +49,70 @@ Proactive threat hunting is employed by many organizations to secure their netwo
 
 ### Objectives
 
-Complete all Active Countermeasures Threat Hunting Labs: https://activecm.github.io/threat-hunting-labs/
+* Complete all Active Countermeasures Threat Hunting Labs: [https://activecm.github.io/threat-hunting-labs/](https://activecm.github.io/threat-hunting-labs/)
+
 ### Resources
 
-Rita VM: https://codefellows.github.io/ops-401-cybersecurity-guide/curriculum/#downloads-table
-Active Countermeasures Threat Hunting Labs: https://activecm.github.io/threat-hunting-labs/
-Analyzing pcap files: https://tshark.dev/analyze/packet_hunting/packet_hunting/
-A guide to using tshark: https://linuxhint.com/wireshark-command-line-interface-tshark/
+* Rita VM: [https://codefellows.github.io/ops-401-cybersecurity-guide/curriculum/#downloads-table](https://codefellows.github.io/ops-401-cybersecurity-guide/curriculum/#downloads-table)
+* Active Countermeasures Threat Hunting Labs: [https://activecm.github.io/threat-hunting-labs/](https://activecm.github.io/threat-hunting-labs/)
+* Analyzing pcap files: [https://tshark.dev/analyze/packet_hunting/packet_hunting/](https://tshark.dev/analyze/packet_hunting/packet_hunting/)
+* A guide to using tshark: [https://linuxhint.com/wireshark-command-line-interface-tshark/](https://linuxhint.com/wireshark-command-line-interface-tshark/)
+
 ### Tasks
 
 #### Part 1: Staging
 
-Tools:
+**Tools:**
 
-Wireshark
-tshark
-Zeek
-Rita
-LibreOffice Calc (Optional)
-Environment:
+* Wireshark
+* tshark
+* Zeek
+* Rita
+* LibreOffice Calc (Optional)
 
-Rita VM (pre-installed with Zeek and Rita)
-Steps:
+**Environment:**
 
-Launch Rita VM: Ensure proper VM function and network access within it.
-Open Wireshark: Locate and launch Wireshark from the Rita VM applications menu.
-Capture Traffic:
-Click the red "Start capturing packets" button on the Wireshark toolbar.
-Optionally, use the capture filter bar for specific criteria (e.g., ip.src == 192.168.1.10). Refer to Wireshark's capture filter documentation for advanced options: https://wiki.wireshark.org/CaptureFilters
-Analyze Traffic:
-Look for unusual spikes, connections to known malicious IPs/domains (check threat intelligence feeds), suspicious protocols/ports, or strings indicating malware activity.
-Utilize Wireshark's coloring rules to highlight potential threats: https://wiki.wireshark.org/ColoringRules
-Utilize Zeek (Optional):
-Use Zeek's scripting language for specific questions about captured traffic.
-Example commands:
-conn count: Count connections by various criteria.
-http.req_header: Analyze HTTP request headers for threats.
-dns.qry: Investigate DNS queries for suspicious domains.
-Refer to Zeek documentation for comprehensive commands and functionalities: [invalid URL removed]
-Utilize Rita (Optional):
-Rita offers features like identifying potential C2 channels, detecting lateral movement, and correlating events from various network sources.
-Consult Rita's documentation for specific commands and features: [invalid URL removed]
-Document Findings:
-Take detailed notes, including:
-Timestamps of suspicious activity.
-Source/destination IPs, ports, and protocols involved.
-Observed strings or behaviors suggesting threats.
-Screenshots of relevant Wireshark displays.
-Export Data (Optional):
-Exporting data from Zeek or Rita can be helpful for further analysis or reporting.
-Zeek supports various formats (CSV, JSON). Consult the documentation for specific commands. Rita also offers export options depending on the feature used.
-Use LibreOffice Calc (Optional):
-Organize and analyze exported data, especially for large datasets.
-Learn about useful functions and formulas for data manipulation and analysis: [invalid URL removed]
+* Rita VM (pre-installed with Zeek and Rita)
+
+**Steps:**
+
+1. **Launch Rita VM:** Ensure proper VM function and network access within it.
+2. **Open Wireshark:** Locate and launch Wireshark from the Rita VM applications menu.
+3. **Capture Traffic:**
+    - Click the red "Start capturing packets" button on the Wireshark toolbar.
+    - Optionally, use the capture filter bar for specific criteria (e.g., `ip.src == 192.168.1.10`). Refer to Wireshark's capture filter documentation for advanced options: [https://wiki.wireshark.org/CaptureFilters](https://wiki.wireshark.org/CaptureFilters)
+4. **Analyze Traffic:**
+    - Look for unusual spikes, connections to known malicious IPs/domains (check threat intelligence feeds), suspicious protocols/ports, or strings indicating malware activity.
+    - Utilize Wireshark's coloring rules to highlight potential threats: [https://wiki.wireshark.org/ColoringRules](https://wiki.wireshark.org/ColoringRules)
+5. **Utilize Zeek (Optional):**
+    - Use Zeek's scripting language for specific questions about captured traffic.
+    - Example commands:
+        - `conn count`: Count connections by various criteria.
+        - `http.req_header`: Analyze HTTP request headers for threats.
+        - `dns.qry`: Investigate DNS queries for suspicious domains.
+    - Refer to Zeek documentation for comprehensive commands and functionalities: [invalid URL removed]
+6. **Utilize Rita (Optional):**
+    - Rita offers features like identifying potential C2 channels, detecting lateral movement, and correlating events from various network sources.
+    - Consult Rita's documentation for specific commands and features: [invalid URL removed]
+7. **Document Findings:**
+    - Take detailed notes, including:
+        - Timestamps of suspicious activity.
+        - Source/destination IPs, ports, and protocols involved.
+        - Observed strings or behaviors suggesting threats.
+        - Screenshots of relevant Wireshark displays.
+8. **Export Data (Optional):**
+    - Exporting data from Zeek or Rita can be helpful for further analysis or reporting.
+    - Zeek supports various formats (CSV, JSON). Consult the documentation for specific commands. Rita also offers export options depending on the feature used.
+9. **Use LibreOffice Calc (Optional):**
+    - Organize and analyze exported data, especially for large datasets.
+    - Learn about useful functions and formulas for data manipulation and analysis: [invalid URL removed]
+
 #### Part 2: Active Countermeasures Labs
 
-Steps:
+**Steps:**
 
-Access Labs: Visit the Active Countermeasures Threat Hunting Labs website: https://activecm.github.io/threat-hunting-labs/
-Complete Labs:
-Work through each lab meticulously, following the provided instructions.
+1. **Access Labs:** Visit the Active Countermeasures Threat Hunting Labs website: [https://activecm.github.io/threat-hunting-labs/](https://activecm.github.io/threat-hunting-labs/)
+2. **Complete Labs:**
+    - Work through each lab meticulously, following the provided instructions.
+    - Take notes as you progress, capturing key findings and challenges encountered.
+
