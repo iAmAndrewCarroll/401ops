@@ -7,15 +7,15 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-print("Loaded API Key: ", os.getenv('API_KEY_VIRUSTOTAL'))
+# print("Loaded API Key: ", os.getenv('API_KEY_VIRUSTOTAL'))
 
 apikey = os.getenv('API_KEY_VIRUSTOTAL') # Set your environment variable before proceeding. You'll need a free API key from virustotal.com so get signed up there first.
 hash = 'D41D8CD98F00B204E9800998ECF8427E' # Set your hash here. 
 
-print("API Key: ", apikey)
+# print("API Key: ", apikey)
 
 # This concatenates everything into a working shell statement that gets passed into virustotal-search.py
-query = 'python3 virustotal-search.py -k ' + str(apikey) + ' -m ' + str(hash)
+query = 'python3 /Users/andrewcarroll/401ops/challenge/ops33/virustotal-search.py -k ' + str(apikey) + ' -m ' + str(hash)
 
 print("Executing Command: ", query)
 
