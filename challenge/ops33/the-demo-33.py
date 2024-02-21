@@ -17,6 +17,6 @@ hash = 'D41D8CD98F00B204E9800998ECF8427E' # Set your hash here.
 # This concatenates everything into a working shell statement that gets passed into virustotal-search.py
 query = 'python3 /Users/andrewcarroll/401ops/challenge/ops33/virustotal-search.py -k ' + str(apikey) + ' -m ' + str(hash)
 
-print("Executing Command: ", query)
+# print("Executing Command: ", query)
 
 os.system(query)

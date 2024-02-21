@@ -62,38 +62,43 @@ def checkfile(cfile):
 	except Exception as Error:
 			print(Error)
 
-# REQUEST FUNCTION
+# VIRUSTOTAL REQUEST FUNCTION
 def VT_Request(key, hash, output):
-	parameters = {"apikey": key, "resource": hash}
-	url = requests.get("https://www.virustotal.com/vtapi/v2/file/report", params=parameters)
-	json_response = url.json()
-	response = int(json_response.get("response_code"))
-	
-	# DOES THE HASH EXISTS IN VT DATABASE?
-	if response == 0:
-		print(hash + ": UNKNOWN")
-		file = open(output,"a")
-		file.write(hash + " 0")
-		file.write("\n")
-		file.close()
+    parameters = {"apikey": key, "resource": hash}
+    url = requests.get("https://www.virustotal.com/vtapi/v2/file/report", params=parameters)
+    json_response = url.json()
+    response = int(json_response.get("response_code"))
+    
+    # DOES THE HASH EXISTS IN VT DATABASE?
+    if response == 0:
+        print(hash + ": UNKNOWN")
+        file = open(output,"a")
+        file.write(hash + " 0")
+        file.write("\n")
+        file.close()
 
-	# DOES THE HASH EXISTS IN VT DATABASE?
-	elif response == 1:
-		positives = int(json_response.get("positives"))
-		if positives >= 3:
-			print(hash + ": MALICIOUS")
-			file = open(output,"a")
-			file.write(hash + " " + str(positives))
-			file.write("\n")
-			file.close()
-		else:
-			print(hash + ": NOT MALICIOUS")
-			file = open(output,"a")
-			file.write(hash + " 0")
-			file.write("\n")
-			file.close()
-	else:
-		print(hash + ": CAN NOT BE SEARCHED")
+    # DOES THE HASH EXISTS IN VT DATABASE?
+    elif response == 1:
+        positives = int(json_response.get("positives"))
+        total = int(json_response.get("total"))
+        if positives >= 3:
+            print(hash + ": MALICIOUS")
+            print(f"Positives detected: {positives}")
+            print(f"Total files scanned: {total}")
+            file = open(output,"a")
+            file.write(hash + " " + str(positives))
+            file.write("\n")
+            file.close()
+        else:
+            print(hash + ": NOT MALICIOUS")
+            print(f"Positives detected: {positives}")
+            print(f"Total files scanned: {total}")
+            file = open(output,"a")
+            file.write(hash + " 0")
+            file.write("\n")
+            file.close()
+    else:
+        print(hash + ": CAN NOT BE SEARCHED")
 
 def Main():
 	parser = argparse.ArgumentParser(description="Search VirusTotal reports with search terms (MD5, SHA1, SHA256) for single hash or multiple hash array found in the argument file.")
