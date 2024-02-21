@@ -19,9 +19,7 @@ Before running the scripts, ensure the following setup steps are completed:
 
 4. **Dependencies**: 
    - Install required Python packages (if any, such as `requests` for `virustotal-search.py`):
-     ```
-     pip install requests
-     ```
+     -  `pip install requests`
 
 ## Scripts
 
@@ -47,7 +45,7 @@ This script, obtained from the provided GitHub repository, handles querying the 
 Navigate to the project directory and run the following command to check a hash against the VirusTotal database:
 
 ```
-./the-demo-33.py <hash_value>
+./the-demo-33.py <hash_value>**
 ```
 
 Replace `<hash_value>` with the hash you want to check. If you don't provide a hash, the script will use a default value.
