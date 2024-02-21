@@ -1,13 +1,30 @@
-#!/usr/bin/env python3
-
 import os
 import sys
+import hashlib
+import time
+import logging
 
-def search_for_file(directory, filename):
+# Initialize logging
+logging.basicConfig(filename="malware_scan_log.txt", level=logging.INFO, format='%(asctime)s %(message)s')
+
+def generate_md5_hash(file_path):
+    with open(file_path, "rb") as file:
+        file_content = file.read()
+        md5_hash = hashlib.md5(file_content).hexdigest()
+    return md5_hash
+
+def scan_directory(directory):
+    scan_results = []  # 2D array for stretch goal
     for root, dirs, files in os.walk(directory):
-        if filename in files:
-            return os.path.join(root, filename)
-    return None
+        for file in files:
+            file_path = os.path.join(root, file)
+            file_size = os.path.getsize(file_path)
+            md5_hash = generate_md5_hash(file_path)
+            timestamp = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+            print(f"Timestamp: {timestamp}, File: {file}, Size: {file_size} bytes, MD5: {md5_hash}, Path: {file_path}")
+            logging.info(f"File: {file}, Size: {file_size} bytes, MD5: {md5_hash}, Path: {file_path}")
+            scan_results.append([timestamp, file_path, md5_hash])
+    return scan_results
 
 def print_directory_suggestions():
     print("Here are some common directory suggestions:")
@@ -20,13 +37,13 @@ def main():
     try:
         while True:
             print("Operating System Detected:", os.name)
-            
+
             # File name input with help option
             filename = input("Enter the file name to search for (or type 'help' for instructions): ")
             if filename.lower() == 'help':
                 print("Enter the name of the file you're looking for, e.g., 'myfile.txt'.")
                 continue
-            
+
             # Directory choice with help option
             print("Choose a directory to search:")
             print("1. Desktop")
@@ -74,9 +91,26 @@ def main():
             else:
                 print("File not found.")
 
+            # Additional Part 2 functionality: Scan directory for malware detection
+            print("\nStarting malware scan in the directory...")
+            scan_results = scan_directory(directory)
+            # You can process or display scan_results as needed
+
     except KeyboardInterrupt:
         print("\nScript interrupted. Exiting.")
         sys.exit()
+
+def search_for_file(directory, filename):
+    for root, dirs, files in os.walk(directory):
+        if filename in files:
+            file_path = os.path.join(root, filename)
+            file_size = os.path.getsize(file_path)
+            md5_hash = generate_md5_hash(file_path)
+            timestamp = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+            print(f"Timestamp: {timestamp}, File: {filename}, Size: {file_size} bytes, MD5: {md5_hash}, Path: {file_path}")
+            logging.info(f"File: {filename}, Size: {file_size} bytes, MD5: {md5_hash}, Path: {file_path}")
+            return file_path
+    return None
 
 if __name__ == "__main__":
     main()
