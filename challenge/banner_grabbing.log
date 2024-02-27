@@ -1,0 +1,2 @@
+ERROR:root:Error occurred while running telnet: Command '/opt/homebrew/bin/telnet 192.168.0.215 22' returned non-zero exit status 1.
+ERROR:root:Error occurred while running telnet: Command '/opt/homebrew/bin/telnet 192.168.0.215 22' returned non-zero exit status 1.
