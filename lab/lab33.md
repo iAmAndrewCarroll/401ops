@@ -186,10 +186,6 @@ Open sample-500.pcap in Wireshark
 ![rita show-beacons](media/lab33-36.png)
 `rita show-beacons sample > sample.csv`
 ![rita show-beacons csv](media/lab33-37.png)
-`rita html-report demo`
-
-
-
 
 ##### Part 2: Active Countermeasures Labs
 
