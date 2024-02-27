@@ -157,6 +157,40 @@ Filepath: labuser@rita:~/Downloads
 **User Agents**
 ![rita user agents](media/lab33-30.png)
 
+### Beacons
+
+Open sample-500.pcap in Wireshark
+- ip.src==192.168.88.2&&ip.dst==165.227.88.15
+- right click anywhere > Column Preferences > Add new > Time Delta, Custom, frame.time_delta_displayed
+![beacons](media/lab33-31.png)
+
+**Tshark: The command line equivalent of Wireshark.**  We can use it to process pcaps and pull out different fields using its protocol dissectors. This is useful if we want to use other tools to manipulate the data. [ActiveCM GitHub Pages](https://activecm.github.io/threat-hunting-labs/long_connections/.)
+
+`sudo apt install tshark`
+![tshark](media/lab33-32.png)
+
+`tshark -r sample-500.pcap -T fields -e ip.src -e ip.dst -e udp.dstport -e frame.time_delta_displayed 'ip.src==192.168.88.2 && ip.dst==165.227.88.15' | head -25`
+![tshark](media/lab33-33.png)
+**the arguments**
+![tshark arguments](media/lab33-34.png)
+
+**Install LibreOffice Calc via the terminal**
+- `sudo apt install libreoffice-calc`
+  - export the data from Rita and use LibreOffice Calc to organize and analyze it.
+  - `tshark -r sample-500.pcap -T fields -E separator=, -e ip.len -e frame.time_delta_displayed 'ip.src==192.168.88.2 && ip.dst==165.227.88.15' > sample-500.csv`
+  - build a table of data points from the exported .csv file
+    - ![tshark csv exportdata analysis](media/lab33-35.png)
+
+**Rita stuff**
+`rita show-beacons sample | head`
+![rita show-beacons](media/lab33-36.png)
+`rita show-beacons sample > sample.csv`
+![rita show-beacons csv](media/lab33-37.png)
+`rita html-report demo`
+
+
+
+
 ##### Part 2: Active Countermeasures Labs
 
 Complete all four of the Active Countermeasures Threat Hunting Labs.
