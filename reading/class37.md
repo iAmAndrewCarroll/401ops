@@ -18,3 +18,5 @@
   2. AJAX ZAP spider: This spider explores the web application by invoking browsers, which then follow the links generated. It's slower but more effective for AJAX applications.
   
   These spiders are best suited for crawling web applications to identify all accessible pages and functionality. The traditional spider is suitable for standard web applications, while the AJAX spider is better for AJAX-heavy web applications.
+
+![ZAP SPEEEEEIIIIIIDERS](media/read37-1.png)
