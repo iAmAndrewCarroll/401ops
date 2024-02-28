@@ -7,6 +7,7 @@
   1. Explore: In this stage, the tester attempts to learn about the system being tested, including identifying software, endpoints, patches, etc. It involves searching for hidden content, known vulnerabilities, and weaknesses.
   2. Attack: The tester attempts to exploit known or suspected vulnerabilities to prove they exist.
   3. Report: The tester reports back the results of their testing, including vulnerabilities, how they exploited them, the difficulty of the exploits, and the severity of the exploitation.
+![Pen Testing Process](media/read37.png)
 
 **2. Explain a “man-in-the-middle proxy” in non-technical terms.**
 - A "man-in-the-middle proxy" is like a security guard positioned between you and a store. When you go to make a purchase, the security guard checks every item you buy, ensuring they're safe to use. Similarly, in the digital world, a man-in-the-middle proxy (like ZAP) sits between your web browser and the website you're visiting. It intercepts and inspects all messages sent between your browser and the website, making sure they're safe. If it detects any threats, it can modify or block them before they reach your browser.
