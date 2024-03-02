@@ -28,22 +28,22 @@ In today’s folder you’ll see twelve different scenarios you can investigate 
 - If a results.txt file is present for the scenario, copy its text over to your Google Doc submission and fill out your findings using this as a template. Otherwise, document your own findings in your submission today.
 
 Screenshots of getting staged and rolling:
-![files and such](media/lab34-1)
-![files and such](media/lab34-2)
-![files and such](media/lab34-3)
+![files and such](media/lab34-1.png)
+![files and such](media/lab34-2.png)
+![files and such](media/lab34-3.png)
 
 Starting Autopsy:
-![files and such](media/lab34-4)
-![files and such](media/lab34-5)
-![more setup](media/lab34-6)
-![more setup](media/lab34-7)
-![more setup](media/lab34-8)
-![more setup](media/lab34-9)
-![more setup](media/lab34-10)
-![more setup](media/lab34-11)
-![more setup](media/lab34-12)
-![more setup](media/lab34-13)
-![more setup](media/lab34-14)
+![files and such](media/lab34-4.png)
+![files and such](media/lab34-5.png)
+![more setup](media/lab34-6.png)
+![more setup](media/lab34-7.png)
+![more setup](media/lab34-8.png)
+![more setup](media/lab34-9.png)
+![more setup](media/lab34-10.png)
+![more setup](media/lab34-11.png)
+![more setup](media/lab34-12.png)
+![more setup](media/lab34-13.png)
+![more setup](media/lab34-14.png)
 
 Reminders from Lab 32 Suspicious Activities:
 **Executables or Scripts:** Likely Evil EzXE download events
@@ -52,31 +52,31 @@ Reminders from Lab 32 Suspicious Activities:
 - Looking for unusual network traffic or signs of system compromise
 
 Top Level Autopsy View:
-![Top Level Autopsy View](media/lab34-15)
+![Top Level Autopsy View](media/lab34-15.png)
 
 Deleted Files > File System (1) > SECOND-3.TXT & Listing info:
-![Deleted Files > File System (1) > SECOND-3.TXT](media/lab34-16)
-![Listing of Second-3.TXT](media/lab34-17)
+![Deleted Files > File System (1) > SECOND-3.TXT](media/lab34-16.png)
+![Listing of Second-3.TXT](media/lab34-17.png)
 **MD5 HASH: `d41d8cd98f00b204e9800998ecf8427e`**
-![md5 hash](media/lab34-18)
+![md5 hash](media/lab34-18.png)
 
 VirusTotal Results for MD5 Hash `d41d8cd98f00b204e9800998ecf8427e`:
-![VirusTotal Results](media/lab34-19)
-![VirusTotal Results](media/lab34-20)
-![VirusTotal Results](media/lab34-21)
-![VirusTotal Results](media/lab34-22)
-![VirusTotal Results](media/lab34-23)
-![VirusTotal Results](media/lab34-24)
+![VirusTotal Results](media/lab34-19.png)
+![VirusTotal Results](media/lab34-20.png)
+![VirusTotal Results](media/lab34-21.png)
+![VirusTotal Results](media/lab34-22.png)
+![VirusTotal Results](media/lab34-23.png)
+![VirusTotal Results](media/lab34-24.png)
 
 Tag the file:
-![Tag the file](media/lab34-25)
-![Tag the file](media/lab34-26)
+![Tag the file](media/lab34-25.png)
+![Tag the file](media/lab34-26.png)
 
 Generate Report > HTML > All Results:
-![Generate Report](media/lab34-27)
-![Generate Report](media/lab34-28)
-![Generate Report](media/lab34-29)
-![Generate Report](media/lab34-30)
+![Generate Report](media/lab34-27.png)
+![Generate Report](media/lab34-28.png)
+![Generate Report](media/lab34-29.png)
+![Generate Report](media/lab34-30.png)
 
 ##### Part 3: Reporting
 
