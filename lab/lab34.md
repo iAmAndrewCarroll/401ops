@@ -11,6 +11,8 @@ Sometimes you’ll be evaluating an incident that already occurred, and receive 
 #### Resources
 
 - [Autopsy Digital Forensics](https://www.autopsy.com/)
+- [Data Artificats, Analysis Results and Reporting in Autopsy 4.19+](https://www.youtube.com/watch?v=5SHB4HwkX28&ab_channel=DFIRScience)
+- 
 
 #### Tasks
 
