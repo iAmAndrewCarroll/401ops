@@ -170,16 +170,41 @@ The NSE allows us to extend Nmap’s capabilities far beyond a mere port scan, m
   - The output:
   - ![the output](media/ops35-25)
 
-  - [Post your LUA-language `.nse` script to your public GitHub repository.]()
-    
-
-
+  - [Post your LUA-language `.nse` script to your public GitHub repository.](https://github.com/iAmAndrewCarroll/401ops/blob/main/challenge/ops35.nse)
 
 ## Part 4: Reporting
 Answer the below discussion prompts in your own words:
-- What are some of the biggest security concerns on the web server?
-- Why might a security professional choose to use Nmap NSE for evaluating a web app target?
-- In your opinion, how can adopting scripting and extensible defenses change the way security professionals handle operations?
+1. **What are some of the biggest security concerns on the web server?**
+
+   | CVE          | Vulnerability Description                                             |
+   |--------------|-----------------------------------------------------------------------|
+   | CVE-2009-3639 | Improper handling of domain names in X.509 certificates                |
+   | CVE-2009-2408 | Cross-site scripting (XSS) vulnerability                               |
+   | CVE-2009-0542 | SQL injection vulnerability                                            |
+   | CVE-2008-7265 | Buffer overflow vulnerability                                          |
+   | CVE-2012-6095 | Denial of Service (DoS) vulnerability due to excessive CPU consumption |
+   | CVE-2011-4130 | Remote code execution vulnerability                                    |
+   | CVE-2011-1137 | Insecure default configuration                                         |
+   | CVE-2010-4652 | Information disclosure vulnerability                                    |
+   | CVE-2010-4221 | Authentication bypass vulnerability                                    |
+   | CVE-2010-3867 | Cross-site request forgery (CSRF) vulnerability                        |
+   | CVE-2009-0543 | Cross-site scripting (XSS) vulnerability                               |
+   | CVE-2008-4242 | Directory traversal vulnerability                                      |
+   | CVE-2006-6563 | Arbitrary code execution vulnerability                                 |
+   | CVE-2006-6270 | Integer overflow vulnerability                                         |
+   | CVE-2006-5815 | SQL injection vulnerability                                            |
+   | CVE-2005-4816 | Buffer overflow vulnerability                                          |
+   | CVE-2005-2390 | Information disclosure vulnerability                                    |
+   | CVE-2004-0529 | Denial of Service (DoS) vulnerability due to excessive memory consumption |
+
+2. **Why might a security professional choose to use Nmap NSE for evaluating a web app target?**
+
+   Using Nmap NSE can be a smart choice for security professionals assessing a web app target due to its ability to automate security testing tasks conveniently and flexibly. With Nmap NSE, security experts can swiftly scan for known vulnerabilities, misconfigurations, and weaknesses in web applications without having to manually execute each test. These scripts can detect common issues such as open ports, outdated software versions, default credentials, and more, allowing security professionals to efficiently evaluate the security stance of web applications and prioritize remediation efforts.
+
+3. **In your opinion, how can adopting scripting and extensible defenses change the way security professionals handle operations?**
+
+   Incorporating scripting and extensible defenses into security operations can revolutionize the way security professionals operate by enabling them to automate repetitive tasks, tailor security controls, and respond swiftly to emerging threats. Scripting capabilities empower security experts to craft custom tools and scripts tailored to their organization's unique security needs, enhancing efficiency and scalability. Extensible defenses allow security teams to integrate additional security features and enhancements into existing systems, bolstering resilience against evolving threats and vulnerabilities. Overall, scripting and extensible defenses empower security professionals to adapt rapidly to changing environments, streamline security operations, and fortify overall cybersecurity posture.
+
 
 **Stretch Goals (Optional Objectives):**
 - Achieve root user access to the web server. In your submission, explain how you accomplished this feat of hacking.
