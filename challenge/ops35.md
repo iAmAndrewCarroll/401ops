@@ -143,6 +143,10 @@ The NSE allows us to extend Nmap’s capabilities far beyond a mere port scan, m
   - ![vulscan.nse git clone](media/ops35-18.png)
   - `cat usr/share/nmap/scripts/vulscan/vulscan.nse`
   - ![vulscan.nse](media/ops35-19.png)
+  - ![vulscan.nse](media/ops35-20.png)
+  - ![vulscan.nse](media/ops35-21.png)
+  - ![vulscan.nse](media/ops35-22.png)
+  - ![vulscan.nse](media/ops35-23.png)
   
   - Save the output to a file for easy viewing.
 
