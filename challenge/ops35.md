@@ -170,9 +170,9 @@ The NSE allows us to extend Nmap’s capabilities far beyond a mere port scan, m
 
 - Write your own `.nse` script that gathers some kind of information about the target. 
   - The script:
-  - ![the script](media/ops35-24)
+  - ![the script](media/ops35-24.png)
   - The output:
-  - ![the output](media/ops35-25)
+  - ![the output](media/ops35-25.png)
 
   - [Post your LUA-language `.nse` script to your public GitHub repository.](https://github.com/iAmAndrewCarroll/401ops/blob/main/challenge/ops35.nse)
 
