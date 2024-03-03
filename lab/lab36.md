@@ -18,7 +18,6 @@ XSS allows attackers to execute scripts in the victim’s browser which can hija
 - [Tips for Creating a Strong Vulnerability Assessment Report](https://blog.rsisecurity.com/tips-for-creating-a-strong-vulnerability-assessment-report/)
 - ChatGPT
 
-
 ## Tasks
 
 ### Part 1: Staging

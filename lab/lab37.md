@@ -35,12 +35,42 @@ For this part of the lab, access [TryHackMe Introduction to OWASP ZAP.](https://
 - Complete TryHackMe’s tasks 4-10 using the Web Security Dojo. Document the things you learn in your submission for the day.
   - Tasks 1-3: These are not necessary since we’re using Web Security Dojo. Skip these steps.
   - Task 4: AJAX Spider is already installed in ZAP. Run AJAX Spider in conjunction with the original spider to perform a crawl of DVWA. Paste your AJAX Spider scan output in your submission.
+![Alotta Pics](media/lab37-1.png)
+![Alotta Pics](media/lab37-2.png)
+![Alotta Pics](media/lab37-3.png)
+![Alotta Pics](media/lab37-4.png)
+![Alotta Pics](media/lab37-5.png)
+![Alotta Pics](media/lab37-6.png)
+![Alotta Pics](media/lab37-7.png)
+![Alotta Pics](media/lab37-8.png)
+![Alotta Pics](media/lab37-9.png)
+![Alotta Pics](media/lab37-10.png)
+![Alotta Pics](media/lab37-11.png)
+![Alotta Pics](media/lab37-12.png)
+![Alotta Pics](media/lab37-13.png)
+![Alotta Pics](media/lab37-14.png)
+![Alotta Pics](media/lab37-15.png)
+
   - Task 5: Configure ZAP as a proxy server in your browser (typically Firefox).
-      - Describe the steps taken to establish proxy connectivity.
-      - Include a screenshot of the traffic updating in ZAP as you are navigating via a proxied Firefox window.
-      - Scan DVWA login page and include a screenshot of the results.
-  - Task 6: This time scan DVWA as an authenticated user and include a screenshot of the results.
-      - How did you establish an authenticated session as ZAP?
+    - Describe the steps taken to establish proxy connectivity.
+    - Include a screenshot of the traffic updating in ZAP as you are navigating via a proxied Firefox window.
+    - ![Alotta Pics](media/lab37-16.png)
+    - ![Alotta Pics](media/lab37-17.png)
+    - ![Alotta Pics](media/lab37-18.png)
+    - ![Alotta Pics](media/lab37-19.png)
+    - ![Alotta Pics](media/lab37-20.png)
+    - ![Alotta Pics](media/lab37-21.png)
+    - ![Alotta Pics](media/lab37-22.png)
+    - ![Alotta Pics](media/lab37-23.png)
+    - ![Alotta Pics](media/lab37-24.png)
+
+    - Scan DVWA login page and include a screenshot of the results.
+    - ![Alotta Pics](media/lab37-25.png)
+
+  - Task 6: This time scan DVWA as an **authenticated user** admin / password and include a screenshot of the results.
+    - How did you establish an authenticated session as ZAP?
+    - **How do you scan DVWA like this?**  I logged in and ZAP does "things" but mine seems to be missing a 10th alert that other students got that is the **`dvwa.local brute`**.  I'm not sure what I did wrong.
+  
   - Task 7: Brute force DVWA with a word list. Include the results.
   - Task 8: Use ZAP to bruteforce the DVWA ‘brute-force’ page. What’s the password?
   - Task 9: Install the [bugcrowd HUNT extensions for OWASP ZAP](https://github.com/bugcrowd/HUNT). Inlude a screenshot of the installed HUNT scripts.
