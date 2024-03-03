@@ -4,7 +4,7 @@
 
 XSS allows attackers to execute scripts in the victim’s browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites. Web Security Dojo allows us study XSS in action, then learn how web application vulnerability analysis can be automated using the open source scanning tool, w3af, to detect vulnerabilities like XSS.
 
-> In 2019, 75% of large companies in Europe and North America were hit by XSS attacks. In the same year, XSS attacks comprised a whopping 40% of all cyber attacks! Turns out injecting malicious code into a web site is a favored attack technique by cyber criminals. We'd better learn a thing or two about it! (Source: [Fudzilla](https://www.fudzilla.com/news/50014-cross-site-scripting-xss-were-a-huge-chunk-of-2019-cyber-attacks){:target="_blank"})
+> In 2019, 75% of large companies in Europe and North America were hit by XSS attacks. In the same year, XSS attacks comprised a whopping 40% of all cyber attacks! Turns out injecting malicious code into a web site is a favored attack technique by cyber criminals. We'd better learn a thing or two about it! Source: [Fudzilla](https://www.fudzilla.com/news/50014-cross-site-scripting-xss-were-a-huge-chunk-of-2019-cyber-attacks)
 
 ## Objectives
 
