@@ -13,9 +13,11 @@ XSS allows attackers to execute scripts in the victim’s browser which can hija
 
 ## Resources
 
-- [Web Security Dojo VM OVA 5.82 GB Download](https://codefellows.github.io/ops-401-cybersecurity-guide/curriculum/#downloads-table){:target="_blank"}
-- [W3AF](https://w3af.org/){:target="_blank"}
-- [Tips for Creating a Strong Vulnerability Assessment Report](https://blog.rsisecurity.com/tips-for-creating-a-strong-vulnerability-assessment-report/){:target="_blank"}
+- [Web Security Dojo VM OVA 5.82 GB Download](https://codefellows.github.io/ops-401-cybersecurity-guide/curriculum/#downloads-table)
+- [W3AF](https://w3af.org/)
+- [Tips for Creating a Strong Vulnerability Assessment Report](https://blog.rsisecurity.com/tips-for-creating-a-strong-vulnerability-assessment-report/)
+- ChatGPT
+
 
 ## Tasks
 
