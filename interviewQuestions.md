@@ -162,9 +162,11 @@ Understanding the HTTP request-response cycle is crucial for web application sec
 
 The TCP handshake, also known as the three-way handshake, is a three-step process used to establish a connection between a client and server in a TCP/IP network. It involves the following steps:
 
-1. **SYN (Synchronize):** The client sends a SYN packet to the server to initiate a connection request.
-2. **SYN-ACK (Synchronize-Acknowledge):** If the server is available and willing to establish a connection, it responds with a SYN-ACK packet, indicating acknowledgment of the client's request and its readiness to proceed.
-3. **ACK (Acknowledge):** Finally, the client sends an ACK packet back to the server, acknowledging the server's response. This completes the handshake process, and both sides are now synchronized and can start exchanging data.
+| Step      | Description                                                                                             |
+|-----------|---------------------------------------------------------------------------------------------------------|
+| 1. SYN    | The client sends a SYN packet to the server to initiate a connection request.                           |
+| 2. SYN-ACK| If the server is available and willing to establish a connection, it responds with a SYN-ACK packet, indicating acknowledgment of the client's request and its readiness to proceed. |
+| 3. ACK    | Finally, the client sends an ACK packet back to the server, acknowledging the server's response. This completes the handshake process, and both sides are now synchronized and can start exchanging data. |
 
 The TCP handshake is a fundamental aspect of network communication, ensuring reliable and orderly transmission of data between clients and servers.
 
