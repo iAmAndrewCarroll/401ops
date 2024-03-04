@@ -32,6 +32,10 @@ This lab requires Web Security Dojo VM.
 
 For this part of the lab, access [TryHackMe Introduction to OWASP ZAP.](https://tryhackme.com/room/learnowaspzap)
 
+**fire up the following in terminal on class-36-39-security-dojo: `sudo bash /home/dojo/targets/juice-shop/start.sh` with credentials dojo / dojo**
+
+dojo IP: 10.0.2.23/24 the vm keeps dropping the connection and getting a new ip address
+
 - Complete TryHackMe’s tasks 4-10 using the Web Security Dojo. Document the things you learn in your submission for the day.
   - Tasks 1-3: These are not necessary since we’re using Web Security Dojo. Skip these steps.
   - Task 4: AJAX Spider is already installed in ZAP. Run AJAX Spider in conjunction with the original spider to perform a crawl of DVWA. Paste your AJAX Spider scan output in your submission.
@@ -53,10 +57,15 @@ For this part of the lab, access [TryHackMe Introduction to OWASP ZAP.](https://
 
   - Task 5: Configure ZAP as a proxy server in your browser (typically Firefox).
     - Describe the steps taken to establish proxy connectivity.
-    - Include a screenshot of the traffic updating in ZAP as you are navigating via a proxied Firefox window.
     - ![Alotta Pics](media/lab37-16.png)
     - ![Alotta Pics](media/lab37-17.png)
     - ![Alotta Pics](media/lab37-18.png)
+
+    **OR** *you can use the Foxy Proxy extension in Firefox to make this easier.*
+    - ![Alotta Pics](media/lab37-31.png)
+    - ![Alotta Pics](media/lab37-32.png)
+    
+    - Include a screenshot of the traffic updating in ZAP as you are navigating via a proxied Firefox window.
     - ![Alotta Pics](media/lab37-19.png)
     - ![Alotta Pics](media/lab37-20.png)
     - ![Alotta Pics](media/lab37-21.png)
@@ -64,8 +73,17 @@ For this part of the lab, access [TryHackMe Introduction to OWASP ZAP.](https://
     - ![Alotta Pics](media/lab37-23.png)
     - ![Alotta Pics](media/lab37-24.png)
 
+    - **Finally getting a scan to run.  http://dvwa.local/:
+    - ![Alotta Pics](media/lab37-33.png)
+    - 
+
     - Scan DVWA login page and include a screenshot of the results.
     - ![Alotta Pics](media/lab37-25.png)
+    - ![Alotta Pics](media/lab37-26.png)
+    - ![Alotta Pics](media/lab37-27.png)
+    - ![Alotta Pics](media/lab37-29.png)
+    - ![Alotta Pics](media/lab37-30.png)
+    - ![Alotta Pics](media/lab37-28.png)
 
   - Task 6: This time scan DVWA as an **authenticated user** admin / password and include a screenshot of the results.
     - How did you establish an authenticated session as ZAP?
