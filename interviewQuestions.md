@@ -62,15 +62,16 @@ Automation and scripting involve using code to automate tasks, reducing the need
 #### Essentials
 - **Ports and Protocols:** Critical for enabling communication between devices. Common protocols include HTTP (port 80) and HTTPS (port 443), with SSH on port 22 for secure access.
 - **OSI Model Layers Overview:** A conceptual framework used to understand network interactions divided into seven layers:
-    | Layer          | Description                                             | Equipment                                           | Common Ports      |
-    |----------------|---------------------------------------------------------|-----------------------------------------------------|-------------------|
-    | Application    | Provides interface between user applications and network | Web browser, Email client                           | HTTP (80), HTTPS (443), SMTP (25), POP3 (110)    |
-    | Presentation   | Handles data translation, encryption, and compression   | SSL/TLS libraries, JPEG, GIF, PNG codecs            | -                 |
-    | Session        | Manages communication sessions between devices           | Session initiation protocol (SIP), NetBIOS          | -                 |
-    | Transport      | Ensures reliable data transmission and error recovery    | TCP, UDP, Flow control mechanisms                   | TCP (Transmission Control Protocol), UDP (User Datagram Protocol)   |
-    | Network        | Routes data packets across networks                      | Router, IP addressing, Routing protocols            | IP (Internet Protocol)                           |
-    | Data Link      | Controls access to physical network media                | Ethernet switches, MAC addressing, LAN protocols   | Ethernet (802.3), ARP (Address Resolution Protocol) |
-    | Physical       | Transmits raw data bits over physical media              | Network cables, Hubs, Repeaters                     | -                 |
+
+| Layer          | Description                                             | Equipment                                           | Common Ports      |
+|----------------|---------------------------------------------------------|-----------------------------------------------------|-------------------|
+| Application    | Provides interface between user applications and network | Web browser, Email client                           | HTTP (80), HTTPS (443), SMTP (25), POP3 (110)    |
+| Presentation   | Handles data translation, encryption, and compression   | SSL/TLS libraries, JPEG, GIF, PNG codecs            | -                 |
+| Session        | Manages communication sessions between devices           | Session initiation protocol (SIP), NetBIOS          | -                 |
+| Transport      | Ensures reliable data transmission and error recovery    | TCP, UDP, Flow control mechanisms                   | TCP (Transmission Control Protocol), UDP (User Datagram Protocol)   |
+| Network        | Routes data packets across networks                      | Router, IP addressing, Routing protocols            | IP (Internet Protocol)                           |
+| Data Link      | Controls access to physical network media                | Ethernet switches, MAC addressing, LAN protocols   | Ethernet (802.3), ARP (Address Resolution Protocol) |
+| Physical       | Transmits raw data bits over physical media              | Network cables, Hubs, Repeaters                     | -                 |
 
 | Port   | Protocol | Description                       |
 |--------|----------|-----------------------------------|
