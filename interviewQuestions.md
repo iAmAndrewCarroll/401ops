@@ -72,6 +72,19 @@ Automation and scripting involve using code to automate tasks, reducing the need
     | Data Link      | Controls access to physical network media                | Ethernet switches, MAC addressing, LAN protocols   | Ethernet (802.3), ARP (Address Resolution Protocol) |
     | Physical       | Transmits raw data bits over physical media              | Network cables, Hubs, Repeaters                     | -                 |
 
+| Port   | Protocol | Description                       |
+|--------|----------|-----------------------------------|
+| 80     | TCP      | HTTP - Hypertext Transfer Protocol (unencrypted) |
+| 443    | TCP      | HTTPS - Hypertext Transfer Protocol Secure (encrypted) |
+| 21     | TCP      | FTP - File Transfer Protocol      |
+| 22     | TCP      | SSH - Secure Shell                |
+| 25     | TCP      | SMTP - Simple Mail Transfer Protocol |
+| 53     | TCP/UDP  | DNS - Domain Name System          |
+| 110    | TCP      | POP3 - Post Office Protocol v3    |
+| 143    | TCP      | IMAP - Internet Message Access Protocol |
+| 3389   | TCP      | RDP - Remote Desktop Protocol     |
+| 3306   | TCP      | MySQL Database                    |
+
 #### Devices and Configurations
 - **Routers:** Direct traffic on the internet, determining the best path for data packets.
 - **Firewalls:** Monitor and control incoming and outgoing network traffic based on predetermined security rules.
