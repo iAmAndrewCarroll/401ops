@@ -21,10 +21,6 @@ This guide is designed to help you navigate through the various domains we've en
   | `cd`       | Change directory                       |
   | `mkdir`    | Make directory                         |
   | `pwd`      | Print working directory                |
-  - **Example:** Displaying directory contents:
-    ```bash
-    ls
-    ```
 
 - **Windows Terminal Commands:**
   | Command    | Description                             |
@@ -34,9 +30,6 @@ This guide is designed to help you navigate through the various domains we've en
   | `mkdir`    | Make directory                         |
   | `ipconfig` | Display IP configuration               |
   - **Example:** Navigating directories in Windows:
-    ```cmd
-    cd C:\Users
-    ```
 
 - **Troubleshooting Tools:**
   | Command        | Purpose                                |
@@ -46,37 +39,89 @@ This guide is designed to help you navigate through the various domains we've en
   | `netstat`      | Show network connections               |
   | `nslookup`     | Look up DNS information                |
   - **Example:** Testing connectivity to a website:
-    ```bash
-    ping www.example.com
-    ```
 
 - **Shells, Scripts, Virtualization, and Active Directory Concepts**
 
 ### Automation and Scripting
 
-- **Basics:** Functions, loops, conditionals, with an emphasis on Python.
-- **Libraries and Scripting Languages:** Python, PowerShell, Bash, Batch files.
+#### Basics
+Automation and scripting involve using code to automate tasks, reducing the need for manual intervention and increasing efficiency. Key concepts include:
+
+- **Functions:** Reusable blocks of code that perform a specific task. In Python, functions are defined using the `def` keyword.
+- **Loops:** Used to repeat a block of code multiple times. Python supports `for` and `while` loops.
+- **Conditionals:** Allow the execution of code based on a condition. Python uses `if`, `elif`, and `else` statements.
+
+#### Libraries and Scripting Languages
+- **Python:** A versatile scripting language known for its readability and wide range of libraries such as NumPy for numerical computations and Pandas for data analysis.
+- **PowerShell:** A task automation framework from Microsoft, built on .NET, offering advanced scripting capabilities for automating the management of Windows systems.
+- **Bash:** A Unix shell and command language for the GNU Operating System, widely used for file manipulation, program execution, and printing text.
+- **Batch files (.bat):** Scripts executed by the Windows Command Prompt, useful for automating repetitive command sequences.
 
 ### Computer Networking
 
-- **Essentials:** Ports, Protocols, OSI Model.
-  - **OSI Model Layers Overview**
-- **Devices and Configurations:** Routers, Firewalls, Switches, Subnets, LANs, WANs.
-- **Protocols and VPNs:** DHCP, DNS, VPN.
-- **APIs and Network Security**
+#### Essentials
+- **Ports and Protocols:** Critical for enabling communication between devices. Common protocols include HTTP (port 80) and HTTPS (port 443), with SSH on port 22 for secure access.
+- **OSI Model Layers Overview:** A conceptual framework used to understand network interactions divided into seven layers:
+    | Layer          | Description                                             | Equipment                                           | Common Ports      |
+    |----------------|---------------------------------------------------------|-----------------------------------------------------|-------------------|
+    | Application    | Provides interface between user applications and network | Web browser, Email client                           | HTTP (80), HTTPS (443), SMTP (25), POP3 (110)    |
+    | Presentation   | Handles data translation, encryption, and compression   | SSL/TLS libraries, JPEG, GIF, PNG codecs            | -                 |
+    | Session        | Manages communication sessions between devices           | Session initiation protocol (SIP), NetBIOS          | -                 |
+    | Transport      | Ensures reliable data transmission and error recovery    | TCP, UDP, Flow control mechanisms                   | TCP (Transmission Control Protocol), UDP (User Datagram Protocol)   |
+    | Network        | Routes data packets across networks                      | Router, IP addressing, Routing protocols            | IP (Internet Protocol)                           |
+    | Data Link      | Controls access to physical network media                | Ethernet switches, MAC addressing, LAN protocols   | Ethernet (802.3), ARP (Address Resolution Protocol) |
+    | Physical       | Transmits raw data bits over physical media              | Network cables, Hubs, Repeaters                     | -                 |
+
+#### Devices and Configurations
+- **Routers:** Direct traffic on the internet, determining the best path for data packets.
+- **Firewalls:** Monitor and control incoming and outgoing network traffic based on predetermined security rules.
+- **Switches:** Connect devices within a network, using MAC addresses to forward data to the correct destination.
+- **Subnets, LANs, WANs:** Organize network connections. Subnets divide a network into manageable pieces, LANs connect devices in close proximity, and WANs link large geographic areas.
+
+#### Protocols and VPNs
+- **DHCP (Dynamic Host Configuration Protocol):** Automatically assigns IP addresses to devices on a network.
+- **DNS (Domain Name System):** Translates domain names to IP addresses.
+- **VPN (Virtual Private Network):** Creates a secure connection over the internet, encrypting data as it travels.
+
+#### APIs and Network Security
+- **APIs (Application Programming Interfaces):** Allow different software applications to communicate with each other.
+- **Network Security:** Involves measures to protect data during transfer, including encryption and the use of secure protocols like TLS/SSL.
 
 ### Security Operations
 
-- **Systems and Analysis:** SIEM, Log Management, Sysmon, Log Analysis.
-- **Threats and Protections:** Data Formats, Incident Response, MITRE ATT&CK, TTPs, APTs.
+#### Systems and Analysis
+- **SIEM (Security Information and Event Management):** Combines security information management (SIM) and security event management (SEM) to provide real-time analysis of security alerts.
+- **Log Management:** Involves the collection, analysis, and retention of computer security logs to identify security incidents.
+- **Sysmon:** A Windows system service and device driver that monitors and logs system activity to the Windows event log.
+- **Log Analysis:** The process of examining logs to identify security incidents, policy violations, fraudulent activity, and operational problems.
+
+#### Threats and Protections
+- **Data Formats:** Include structured (e.g., databases) and unstructured data (e.g., emails).
+- **Incident Response:** The organized approach to addressing and managing the aftermath of a security breach or attack.
+- **MITRE ATT&CK:** A globally-accessible knowledge base of adversary tactics and techniques based on real-world observations.
+- **TTPs (Tactics, Techniques, and Procedures):** The behavior of an attacker, used to understand threat actors and their methods.
+- **APTs (Advanced Persistent Threats):** Targeted attacks that remain undetected for long periods.
 
 ### Data Protection
 
-- **Encryption, Hashing, PKI, TLS/SSL, Certificates, Password Security**
+#### Encryption, Hashing, PKI, TLS/SSL, Certificates, Password Security
+- **Encryption:** The process of converting data into a code to prevent unauthorized access. It includes at-rest and in-transit protections.
+- **Hashing:** A form of encryption that converts data into a fixed-size hash, which cannot be reversed.
+- **PKI (Public Key Infrastructure):** A framework for managing digital certificates and public-key encryption.
+- **TLS/SSL (Transport Layer Security/Secure Sockets Layer):** Protocols for securing communications over computer networks.
+- **Certificates:** Digital
+
+ documents that bind a public key with an identity (e.g., a person or organization).
+- **Password Security:** Practices and methods used to protect passwords from unauthorized access and exploitation.
 
 ### Cloud Computing Security
 
-- **Providers, Models, AWS Security, Virtual Networks, Monitoring and Logging**
+#### Providers, Models, AWS Security, Virtual Networks, Monitoring and Logging
+- **Providers:** Companies that offer cloud computing services, such as Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).
+- **Models:** Include public clouds, private clouds, and hybrid clouds, each with different levels of security control.
+- **AWS Security:** Encompasses a wide range of features and services designed to protect AWS resources, including Identity and Access Management (IAM), Security Groups, and AWS Shield for DDoS protection.
+- **Virtual Networks:** Isolated networks within the cloud that control inbound and outbound connections to resources.
+- **Monitoring and Logging:** Essential for detecting and responding to security incidents within cloud environments. Services like AWS CloudTrail and CloudWatch provide logging and monitoring capabilities.
 
 ### Web Application Security
 
@@ -112,6 +157,16 @@ Understanding the HTTP request-response cycle is crucial for web application sec
 | 404  | Not Found - The resource was not found.          |
 | 500  | Internal Server Error - A server error occurred. |
 | 403  | Forbidden - Request is understood but refused.   |
+
+#### TCP Handshake (SYN/ACK)
+
+The TCP handshake, also known as the three-way handshake, is a three-step process used to establish a connection between a client and server in a TCP/IP network. It involves the following steps:
+
+1. **SYN (Synchronize):** The client sends a SYN packet to the server to initiate a connection request.
+2. **SYN-ACK (Synchronize-Acknowledge):** If the server is available and willing to establish a connection, it responds with a SYN-ACK packet, indicating acknowledgment of the client's request and its readiness to proceed.
+3. **ACK (Acknowledge):** Finally, the client sends an ACK packet back to the server, acknowledging the server's response. This completes the handshake process, and both sides are now synchronized and can start exchanging data.
+
+The TCP handshake is a fundamental aspect of network communication, ensuring reliable and orderly transmission of data between clients and servers.
 
 ## Governance and Compliance
 
@@ -178,6 +233,4 @@ Penetration testing (pentesting) is an authorized simulated cyberattack on a com
 | Gaining Access            | Web application attacks, such as cross-site scripting, SQL injection, and backdoors. |
 | Maintaining Access        | To see if the vulnerability can be used to achieve a persistent presence in the exploited system. |
 | Analysis                  | Compiling the results of the penetration test and making recommendations for security improvements. |
-
-This comprehensive expansion into governance, compliance, and advanced security topics outlines the critical areas necessary for maintaining and enhancing an organization's security posture.
 
