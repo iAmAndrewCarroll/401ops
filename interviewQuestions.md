@@ -123,10 +123,43 @@ Automation and scripting involve using code to automate tasks, reducing the need
 - **Hashing:** A form of encryption that converts data into a fixed-size hash, which cannot be reversed.
 - **PKI (Public Key Infrastructure):** A framework for managing digital certificates and public-key encryption.
 - **TLS/SSL (Transport Layer Security/Secure Sockets Layer):** Protocols for securing communications over computer networks.
-- **Certificates:** Digital
-
- documents that bind a public key with an identity (e.g., a person or organization).
+- **Certificates:** Digital documents that bind a public key with an identity (e.g., a person or organization).
 - **Password Security:** Practices and methods used to protect passwords from unauthorized access and exploitation.
+
+### Encryption: Symmetric and Asymmetric
+
+Encryption is a fundamental aspect of data protection, ensuring confidentiality and integrity by transforming readable data into an unreadable format. It comes in two main types: symmetric and asymmetric encryption, each serving different purposes and scenarios in cybersecurity.
+
+#### Symmetric Encryption
+
+Symmetric encryption, also known as private-key encryption, uses a single key for both encryption and decryption of data. This method is efficient and fast, making it suitable for encrypting large volumes of data or for systems with limited computational resources.
+
+- **Key Features:**
+  - **Speed:** Generally faster than asymmetric encryption due to simpler algorithms.
+  - **Key Management:** The biggest challenge is secure key distribution and management, as the same key must be securely shared among parties.
+  - **Use Cases:** Widely used for data at rest (e.g., encrypting files on a disk) and data in transit (e.g., securing data sent over a network).
+
+- **Common Algorithms:** AES (Advanced Encryption Standard), DES (Data Encryption Standard), and RC4.
+
+#### Asymmetric Encryption
+
+Asymmetric encryption, or public-key encryption, uses a pair of keys: a public key for encryption and a private key for decryption. This key pair is mathematically related, yet it is computationally infeasible to deduce the private key from the public key. 
+
+- **Key Features:**
+  - **Key Distribution:** Eases the problem of key exchange. Anyone can encrypt data using the public key, but only the holder of the paired private key can decrypt it.
+  - **Digital Signatures:** Enables not only encryption but also authentication and non-repudiation through digital signatures.
+  - **Use Cases:** Commonly used for secure communication over insecure channels (e.g., the Internet), including email encryption and securing connections between web browsers and servers (SSL/TLS).
+
+- **Common Algorithms:** RSA (Rivest-Shamir-Adleman), ECC (Elliptic Curve Cryptography), and DH (Diffie-Hellman).
+
+#### Comparison and Integration
+
+- **Strengths and Weaknesses:** Symmetric encryption is faster but faces challenges in secure key distribution. Asymmetric encryption, while slower due to its complex algorithms, solves the key distribution problem and provides mechanisms for digital signatures and certificates.
+- **Integrated Use in SSL/TLS:** SSL/TLS protocols, used for securing internet communications, exemplify how symmetric and asymmetric encryption can be combined. Asymmetric encryption secures the initial key exchange, establishing a secure channel. Then, symmetric encryption takes over for the session, encrypting the bulk of the data due to its efficiency.
+
+#### Conclusion
+
+Understanding both symmetric and asymmetric encryption is crucial for implementing comprehensive security strategies. By leveraging the strengths of each and understanding their applications, organizations can ensure the confidentiality, integrity, and availability of sensitive data.
 
 ### Cloud Computing Security
 
