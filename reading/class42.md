@@ -1,4 +1,4 @@
-Reading 42: Pass the Hash with Mimikatz
+# Reading 42: Pass the Hash with Mimikatz
 
 [Resource: What is Mimikatz](https://www.varonis.com/blog/what-is-mimikatz)
 
