@@ -43,13 +43,13 @@ Complete the lab at [TryHackMe OWASP Juice Shop Room](https://tryhackme.com/room
 2. **Task 2: Let’s go on an adventure!**
     - What is the administrator’s email address? 
       - **admin@juice-sh.op**
-      - ![admin email](lab38-1.png)
+      - ![admin email](media/lab38-1.png)
     - What parameter is used for searching?
       - **q**
-      - ![search parameter](lab38-2.png)
+      - ![search parameter](media/lab38-2.png)
     - What show does Jim reference in his review?
       - **Star Trek**
-      - ![Jim's review](lab38-3.png)
+      - ![Jim's review](media/lab38-3.png)
 
 **At this point I have been trying to do this lab for like a week and every time I do it breaks.  The VM freezes.  The systems fail.  I'm going to stop here and submit what I have.  I've gone through the lecture videos and tried redownloading the VM and still it just crashes.  I've deleted a bunch off the lab machine to see if it was a storage space issue but I'm done.  This is ridiculous.**
 
