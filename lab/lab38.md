@@ -18,17 +18,19 @@ Today you’ll use Burp Suite Community Edition to probe a vulnerable web app, t
 - [the latest OWASP Top Ten](https://owasp.org/www-project-top-ten/)
 - [TryHackMe Web Fundamentals room](https://tryhackme.com/room/webfundamentals)
 - [Daniel Miessler’s SecLists GitHub repo](https://github.com/danielmiessler/SecLists)
+- [Juan Miguel Cano's Lab 38](https://docs.google.com/document/d/1fh4YJhrGxJsTnfaYsXo7cRwxiGWHptlnNsdRJ8aNuko/edit#heading=h.kcpbyn7nzuwg)
 
 ## Tasks
 
 ### Part 1: Staging
 This lab requires Web Security Dojo VM.
 
-1. Juice Shop is manually launched via shell script from the start menu > targets section.
+1. Juice Shop is manually launched via shell script from the start menu (top left, round blue and white icon)> targets section.
 2. Access the Juice Shop page to verify it is up.
 3. Install Git with `sudo apt update` then `sudo apt install git`.
 4. Git clone [SecLists](https://github.com/danielmiessler/SecLists) to your Web Security Dojo.
 5. If you reboot Web Security Dojo, you’ll need to re-launch Juice Shop manually.
+**You must go through the steps to generate a new certificate and install it in your browser.  Once complete you can do part 2.  Juan Miguel has the pics in his lab.  I am so far behind I'm not going to try and get screenshots of the setup stuff.**
 
 ### Part 2: TryHackMe Burp Suite Lab
 We’ll be revisiting TryHackMe’s site once again, this time in guiding us on how to use Burp Suite against OWASP Juice Shop.
@@ -37,10 +39,20 @@ Complete the lab at [TryHackMe OWASP Juice Shop Room](https://tryhackme.com/room
 
 1. **Task 1: Open for business!**
     - Nothing to do here but to review the primer and move forward into Task 2.
+
 2. **Task 2: Let’s go on an adventure!**
-    - What is the administrator’s email address?
+    - What is the administrator’s email address? 
+      - **admin@juice-sh.op**
+      - ![admin email](lab38-1.png)
     - What parameter is used for searching?
+      - **q**
+      - ![search parameter](lab38-2.png)
     - What show does Jim reference in his review?
+      - **Star Trek**
+      - ![Jim's review](lab38-3.png)
+
+**At this point I have been trying to do this lab for like a week and every time I do it breaks.  The VM freezes.  The systems fail.  I'm going to stop here and submit what I have.  I've gone through the lecture videos and tried redownloading the VM and still it just crashes.  I've deleted a bunch off the lab machine to see if it was a storage space issue but I'm done.  This is ridiculous.**
+
 3. **Task 3: Inject the juice**
     - How did you log into Bender’s account?
     - How did you log into the administrator’s account?
